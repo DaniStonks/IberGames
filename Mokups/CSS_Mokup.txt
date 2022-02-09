@@ -1,0 +1,58 @@
+CSS ->
+
+	WhiteTheme:
+		-Main color: #ebebeb
+		-Text color: #232323
+		-Slider arrows color: #232323
+		-Stroke color: #000000
+		-Lines -> Fill: #232323
+		       -> Stroke: #000000
+
+		-Button Search -> Fill: #232323
+			-> Stroke: #000000
+			-> Text: #c0c0c0
+
+		-Button switchTheme -> Fill: #232323
+			-> Stroke: #000000
+
+		-Button Account -> Fill: #232323
+			-> Stroke: #000000
+
+		-Button Load -> Fill: #232323
+			-> Stroke: #000000
+			-> Text: ebebeb
+
+	DarkTheme:
+		-Main color: #232323
+		-Text color: #aaaaaa
+		-Slider arrows color: #232323
+		-Stroke color: #444444
+		-Lines -> Fill: #aaaaaa
+		       -> Stroke: #444444
+		
+		-Button Search -> Fill: #060606
+			-> Stroke: #444444
+			-> Text: #aaaaaa
+
+		-Button switchTheme -> Fill: #aaaaaa
+			-> Stroke: #444444
+
+		-Button Account -> Fill: #aaaaaa
+			-> Stroke: #444444
+
+		-Button Load -> Fill: #aaaaaa
+			-> Stroke: #444444
+			-> Text: #444444
+
+		-Coments Page -> Squares Coments -> Fill: 444444
+						    Stroke: None
+						    Text: aaaaaa
+				 Square AccountInfo -> Fill: 606060
+						       Stroke: none
+				 Square AcercaDoPost -> Fill: 7a7a7a
+							Text: 000000
+				 Line -> Fill: aaaaaa
+					 Stroke: 232323
+				 Butoes -> Fill: aaaaaa
+					   Stroke: 232323
+					   Text: 232323
