@@ -1,0 +1,22 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 1px solid #333;
+}
+
+#navigationPages{
+  display: flex;
+}
+
+body{
+  background-color: #ebebeb;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}

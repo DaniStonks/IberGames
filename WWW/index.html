@@ -4,84 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        window.onload = function(){
-            let txtEscolhas = document.getElementById("txtEscolhas");
-            let sports = document.forms["demoForm"].elements["sports[]"];
-
-            for(let i=0; i<sports.length; i++){
-                sports[i].addEventListener("change", function(evt){
-                    if(this.checked){
-                        txtEscolhas.value = txtEscolhas.value + this.value + "|";
-                    }
-                    else{
-                        txtEscolhas.value = txtEscolhas.value.replace(this.value+"|", "").trim();
-                    }
-                })
-            }
-
-
-            const formElements = document.forms.demoForm.elements;
-            const btnMostrar = formElements.btnMostrar;
-            const txtEscolha = formElements.txtEscolha;
-            const radioButtons = document.querySelectorAll("input[name='size']");
-
-            btnMostrar.addEventListener("click", function(evt){
-                let selecionado;
-                for(const radioButton of radioButtons){
-                    if(radioButton.checked){
-                        txtEscolhas.value = radioButton.value;
-                        break;
-                    }
-                }
-            });
-        }
-    </script>
-    <title>Laboratorio 01</title>
+    <link rel="stylesheet" href="./styles/whiteMode.css">
+    <title>ProjPW</title>
 </head>
 <body>
     <header>
-        <!--TEMPRARIOR-->
-        <form action="#" method="get" id="demoForm" name="demoForm">
-            <fieldset>
-                <legend>Escolha o(s) tipos de Desportos</legend>
-                <input type="checkbox" name="sports[]" value="bicicleta"/>Bicicleta
-                <input type="checkbox" name="sports[]" value="natacão"/>Nataaõ
-                <input type="checkbox" name="sports[]" value="corrida"/>Corrida
-                <input type="checkbox" name="sports[]" value="andebol"/>Andebol
-                <input type="checkbox" name="sports[]" value="futebol"/>Furtebol
-                <input type="checkbox" name="sports[]" value="outros"/>outros
-            </fieldset>
-            <fieldset>
-                <legend>Desportos escolhidos</legend>
-                <label for="txtEscolhas">Escolhas:</label>
-                <input type="text" name="txtEscolhas" id="txtEscolhas" disabled="true" size="50"/>
-
-            </fieldset>
-        </form>
-
-        <form action="#" method="get" id="demoForm" name="demoForm">
-            <fieldset>
-                <legend>Escolha o seu tamanho </legend>
-                <label for="xs">XS</label>
-                <input type="radio" name="size" value="XS" id="xs"/>
-                <label for="s">S</label>
-                <input type="radio" name="size" value="S" id="s"/>
-                <label for="m">M</label>
-                <input type="radio" name="size" value="M" id="m"/>
-                <label for="l">L</label>
-                <input type="radio" name="size" value="L" id="l"/>
-
-
-            </fieldset>
-            <fieldset>
-                <legend>Valorr slecionado</legend>
-                <label for="txtEscolha">Escolha:</label>
-                <input type="text" name="txtEscolha" id="txtEscolha" disabled="true" size="30"/>
-                <input type="button" id="btnEscolha" name="btnEscolha" value="mostrar"/>
-            </fieldset>
-        </form>
-        <!--TEMPOROARIO-->
         <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
         <ul id="navigationPages">
             <li><a href="">News</a></li>
@@ -97,7 +24,85 @@
         </div>
     </header>
     <main>
-
+        <section class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+              <li id="carousel__slide1"
+                  tabindex="0"
+                  class="carousel__slide">
+                <div class="carousel__snapper">
+                  <a href="#carousel__slide4"
+                     class="carousel__prev">Go to last slide</a>
+                  <a href="#carousel__slide2"
+                     class="carousel__next">Go to next slide</a>
+                </div>
+              </li>
+              <li id="carousel__slide2"
+                  tabindex="0"
+                  class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide1"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide3"
+                   class="carousel__next">Go to next slide</a>
+              </li>
+              <li id="carousel__slide3"
+                  tabindex="0"
+                  class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide2"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide4"
+                   class="carousel__next">Go to next slide</a>
+              </li>
+              <li id="carousel__slide4"
+                  tabindex="0"
+                  class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide3"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide1"
+                   class="carousel__next">Go to first slide</a>
+              </li>
+            </ol>
+            <aside class="carousel__navigation">
+              <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide1"
+                     class="carousel__navigation-button">Go to slide 1</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide2"
+                     class="carousel__navigation-button">Go to slide 2</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide3"
+                     class="carousel__navigation-button">Go to slide 3</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide4"
+                     class="carousel__navigation-button">Go to slide 4</a>
+                </li>
+              </ol>
+            </aside>
+          </section>
+          <section id="main_content">
+            <article class="news">
+              <h3 class="news_title">Titulo da noticia</h3>
+              <p class="news_body">Conteudo da noticia</p>
+            </article>
+            <article class="news">
+              <h3 class="news_title">Titulo da noticia</h3>
+              <p class="news_body">Conteudo da noticia</p>
+            </article>
+            <article class="news">
+              <h3 class="news_title">Titulo da noticia</h3>
+              <p class="news_body">Conteudo da noticia</p>
+            </article>
+            <article class="news">
+              <h3 class="news_title">Titulo da noticia</h3>
+              <p class="news_body">Conteudo da noticia</p>
+            </article>
+          </section>
     </main>
     <footer>
         <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
