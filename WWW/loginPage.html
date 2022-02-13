@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/whiteMode.css">
+    <title>ProjPW</title>
+</head>
+
+<body>
+    <header>
+        <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
+        <div id="userButtons">
+            <img src="./images/themeIcon.JPG" id="themeButton">
+            <a href="index.html" id="homeButton"><img src="./images/userIcon.JPG"></a>
+        </div>
+    </header>
+    <main id="userForms">
+        <div id="loginBox">
+            <label>LOGIN TO ACCOUNT</label>
+            <form action="#" method="get" id="loginForm" name="loginForm">
+                <fieldset>
+                    <input type="text" name="txtUsername" id="txtUsername" size="30" placeholder="Username"/>
+                    <input type="text" name="txtPassword" id="txtPassword" size="30" placeholder="Password"/>
+                    <input type="checkbox" name="rememberLogin" value="remember" />Remember me
+                    <input type="submit" id="btnLogin" name="btnLogin" value="Login"/>
+                </fieldset>
+            </form>
+        </div>
+        <div id="registerBox">
+            <label>REGISTER ACCOUNT</label>
+            <form action="#" method="post" id="registerForm" name="registerForm">
+                <fieldset>
+                    <input type="text" name="txtUsername" id="txtUsername" size="30" placeholder="Username"/>
+                    <input type="text" name="txtEmail" id="txtEmail" size="30" placeholder="Email"/>
+                    <input type="text" name="txtPassword" id="txtPassword" size="30" placeholder="Password"/>
+                    <input type="text" name="txtConfirmPassword" id="txtConfirmPassword" size="30" placeholder="Confirm Password"/>
+                    <input type="submit" id="btnRegister" name="btnRegister" value="Register"/>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
