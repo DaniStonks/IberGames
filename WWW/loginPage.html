@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/whiteMode.css">
+    <link rel="stylesheet" href="./styles/whiteModeLoginPage.css">
     <title>ProjPW</title>
 </head>
 
@@ -22,10 +22,12 @@
             <label>LOGIN TO ACCOUNT</label>
             <form action="#" method="get" id="loginForm" name="loginForm">
                 <fieldset>
-                    <input type="text" name="txtUsername" id="txtUsername" size="30" placeholder="Username"/>
-                    <input type="text" name="txtPassword" id="txtPassword" size="30" placeholder="Password"/>
-                    <input type="checkbox" name="rememberLogin" value="remember" />Remember me
-                    <input type="submit" id="btnLogin" name="btnLogin" value="Login"/>
+                    <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
+                    <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
+                    <div>
+                        <input type="checkbox" name="rememberLogin" id="rememberLogin" class="form_item" value="remember" /> Remember me
+                    </div>
+                    <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Login"/>
                 </fieldset>
             </form>
         </div>
@@ -33,11 +35,11 @@
             <label>REGISTER ACCOUNT</label>
             <form action="#" method="post" id="registerForm" name="registerForm">
                 <fieldset>
-                    <input type="text" name="txtUsername" id="txtUsername" size="30" placeholder="Username"/>
-                    <input type="text" name="txtEmail" id="txtEmail" size="30" placeholder="Email"/>
-                    <input type="text" name="txtPassword" id="txtPassword" size="30" placeholder="Password"/>
-                    <input type="text" name="txtConfirmPassword" id="txtConfirmPassword" size="30" placeholder="Confirm Password"/>
-                    <input type="submit" id="btnRegister" name="btnRegister" value="Register"/>
+                    <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
+                    <input type="text" name="txtEmail" id="txtEmail" size="30" class="form_item" placeholder="Email"/>
+                    <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
+                    <input type="text" name="txtConfirmPassword" id="txtConfirmPassword" class="form_item" size="30" placeholder="Confirm Password"/>
+                    <input type="submit" id="btnRegister" name="btnRegister" class="form_item" value="Register"/>
                 </fieldset>
             </form>
         </div>

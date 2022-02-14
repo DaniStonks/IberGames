@@ -1,0 +1,71 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 2px solid black;
+}
+
+#navigationPages{
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#navigationPages li {
+  padding: 0 1em;
+}
+
+#navigationPages li:first-child{
+  border-right: 1px solid;
+}
+
+#navigationPages li:last-child{
+  border-left: 1px solid;
+}
+
+#userButtons{
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+#homeButton img{
+  margin-left: 20px;
+  vertical-align: bottom;
+}
+
+body{
+  background-color: #ebebeb;
+}
+
+#userForms{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#loginForm fieldset{
+  display: flex;
+  flex-flow: column;
+}
+
+#registerForm fieldset{
+  display: flex;
+  flex-flow: column;
+}
+
+.form_item{
+  margin: 5px 0px;
+}
+
+#btnRegister, #btnLogin{
+  margin-top: 30px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
