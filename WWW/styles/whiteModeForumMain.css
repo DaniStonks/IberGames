@@ -13,6 +13,7 @@ header{
   align-items: center;
   margin: 0px;
   padding: 0px;
+  padding-bottom: 5px;
 }
 
 #navigationPages li {
@@ -40,6 +41,16 @@ header{
 
 body{
   background-color: #ebebeb;
+}
+
+#forumCategories{
+  margin: 0px;
+  padding: 0px;
+  padding-top: 30px;
+}
+
+#forumCategories li{
+  background-color: pink;
 }
 
 footer{
