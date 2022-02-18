@@ -18,11 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/f', function(req, res) {
-  res.render("forum-categories");
-});
-
-app.get("/", routes);
+app.use("/", routes);
 
 /*
 app.get("/novo-comentario", function(req, res) {

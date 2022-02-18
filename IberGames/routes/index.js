@@ -24,8 +24,8 @@ router.get('/forum-categories', function(req, res) {
 });
 */
 
-router.get('/f', function(req, res) {
-    res.render("news");
+router.get('/forum-categories', function(req, res) {
+    res.render("forum-categories");
 });
 
 module.exports = router;
