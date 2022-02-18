@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/f', function(req, res) {
+  res.render("forum-categories");
+});
+
 app.get("/", routes);
 
 /*
@@ -44,5 +48,5 @@ app.use(function(req, res) {
 });
 
 http.createServer(app).listen(8888, function() {
-  console.log("Aplicação 'site' inciada, à escuta no porto 8888");
+  console.log("Aplicação 'IberGames' inciada, à escuta no porto 8888");
 });
