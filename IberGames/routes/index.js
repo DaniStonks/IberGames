@@ -1,5 +1,8 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
+
+const express = require('express');
+const router = express.Router();
+const requestHandlers = require("./request-handlers");
 
 /* Obtém a página inicial. */
 router.get("/", function(req, res) {
@@ -27,5 +30,8 @@ router.get('/forum-categories', function(req, res) {
 router.get('/forum-categories', function(req, res) {
     res.render("forum-categories");
 });
+
+// People
+router.get("/category", requestHandlers.getCategories);
 
 module.exports = router;
