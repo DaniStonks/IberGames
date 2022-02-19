@@ -1,5 +1,5 @@
 "use strict";
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const options = require("../config/options.json");
 
 /**
@@ -13,7 +13,6 @@ function getCategories(req, res) {
     connection.query(
         'SELECT Cat_nome, Cat_desc FROM Categoria',
         function (err, rows, fields) {
-            console.log(rows);
             if (err) {
                 res.json({"message": "error", "error": err });
             }

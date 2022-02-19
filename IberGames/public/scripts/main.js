@@ -29,20 +29,15 @@ function replaceChilds(id, newSon) {
  * @param {Object} object - objecto do qual vamos transformar o conteudo dos seus atributos em linhas
  * @param {boolean} headerFormat - controla de o formato é cabeçalho ou linha normal
  */
-function tableLine(object, headerFormat) {
-    let tr = document.createElement("tr");
-    let tableCell = null;
-    for (let property in object) {
-        if ((object[property] instanceof Function))
-            continue;
-        if (headerFormat) {
-            tableCell = document.createElement("th");
-            tableCell.textContent = property[0].toUpperCase() + property.substr(1, property.length - 1);
-        } else {
-            tableCell = document.createElement("td");
-            tableCell.textContent = object[property];
-        }
-        tr.appendChild(tableCell);
-    }
-    return tr;
+function categoryListChild(category) {
+    let li = document.createElement("li");
+    let anchor = document.createElement("a");
+    let paragraph = document.createElement("p");
+
+    anchor.textContent = category.name;
+    paragraph.textContent = category.description;
+
+    li.appendChild(anchor);
+    li.appendChild(paragraph);
+    return li;
 };
