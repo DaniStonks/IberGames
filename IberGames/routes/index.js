@@ -6,7 +6,7 @@ const requestHandlers = require("./request-handlers");
 
 /* Obtém a página inicial. */
 router.get("/", function(req, res) {
-    res.render("news");
+    res.render("index");
 });
 
 /* Obtém a página inicial do forum.
@@ -26,18 +26,6 @@ router.get('/forum-categories', function(req, res) {
     });
 });
 */
-
-router.get('/reviews', function(req, res) {
-  res.render("reviews");
-});
-
-router.get('/newsPageExample', function(req, res) {
-  res.render("newsPageExample");
-});
-
-router.get('/reviewPageExample', function(req, res) {
-  res.render("reviewPageExample");
-});
 
 router.get('/forum-categories', function(req, res) {
     res.render("forum-categories");
