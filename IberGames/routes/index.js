@@ -10,6 +10,13 @@ router.get("/", function(req, res) {
 });
 
 /* Obtém a página inicial do forum.
+
+router.get("/", function(req, res) {
+    res.render("index",{
+      title: "neps"
+    });
+});
+
 router.get('/forum-categories', function(req, res) {
     var myBooks = [];
     var mySpeakers = [];

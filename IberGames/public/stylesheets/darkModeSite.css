@@ -357,6 +357,7 @@ body{
 input[type='text']{
   border-style: none;
   border-radius: 4px 4px;
+  border: 2px solid transparent;
 }
 
 input[type='text']::placeholder{
@@ -364,15 +365,12 @@ input[type='text']::placeholder{
 }
 
 input[type='text']:hover{
-  border-radius: 4px 4px;
   border: 2px solid #7e7e7e;
 }
 
 /**Nao esta a funcionar**/
 input[type='text']:focus{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-style: none;
+  border: 2px solid transparent;
 }
 
 input[type=checkbox]{
