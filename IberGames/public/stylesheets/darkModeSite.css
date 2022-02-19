@@ -2,312 +2,239 @@
 *  Pagina inicial do Site   *
 *****************************/
 header{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-    border-bottom: 2px solid black;
-  }
-  
-  #navigationPages{
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  #navigationPages li {
-    padding: 0 1em;
-  }
-  
-  #navigationPages li:first-child{
-    border-right: 1px solid;
-  }
-  
-  #navigationPages li:last-child{
-    border-left: 1px solid;
-  }
-  
-  #formAut{
-    display: flex;
-    align-items: center;
-  }
-  
-  #userButtons{
-    display: flex;
-    align-items: center;
-  }
-  
-  #loginButton img{
-    vertical-align: bottom;
-  }
-  
-  #homeButton img{
-    vertical-align: bottom;
-  }
-  
-  body{
-    background-color: #ebebeb;
-  }
-  
-  .news {
-    display: grid;
-    padding: 2em 0em;
-    grid-template-areas: 
-    'image title'
-    'image body';
-    grid-template-columns: auto 1fr;
-    column-gap: 2em;
-    max-width: 60%;
-    margin: 0 auto;
-  }
-  
-  .news_title{
-    grid-area: title;
-    margin: 0px;
-    align-self: flex-start;
-  }
-  
-  .news_body{
-    grid-area: body;
-    margin: 0px;
-    align-self: flex-start;
-  }
-  
-  .news_image{
-    grid-area: image;
-  }
-  
-  .news_dividing_bar{
-    max-width: 40%;
-    position: relative;
-    left: 20%;
-    border: 2px solid black;
-  }
-  
-  footer{
-    display: flex;
-    padding: 3em 2em 5em 2em;
-    margin: 3em 0px 2em 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-  }
-  
-  #footerPages{
-    display: flex;
-    flex:1;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    padding: 0px;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-  
-  ul{
-    list-style: none;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 2px solid black;
+}
+
+#navigationPages{
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#navigationPages li {
+  padding: 0 1em;
+}
+
+#navigationPages li:first-child{
+  border-right: 1px solid;
+}
+
+#navigationPages li:last-child{
+  border-left: 1px solid;
+}
+
+#formAut{
+  display: flex;
+  align-items: center;
+}
+
+#userButtons{
+  display: flex;
+  align-items: center;
+}
+
+#loginButton img{
+  vertical-align: bottom;
+}
+
+#homeButton img{
+  vertical-align: bottom;
+}
+
+body{
+  background-color: #ebebeb;
+}
+
+.item{
+  background: lightpink;    
+  text-align: center;
+  height: 300px !important;
+}
+
+.carousel{
+  margin-top: 20px;
+}
+
+.carousel-control{
+  height:300px;
+}
+
+.bs-example{
+  margin: 0 auto;
+}
+
+.carousel.carousel-fade .item {
+  opacity:0;
+  filter: alpha(opacity=0); /* ie fix */
+}
+
+.carousel.carousel-fade .active.item {
+  opacity:1;
+  filter: alpha(opacity=100); /* ie fix */
+}
+
+.news {
+  display: grid;
+  padding: 2em 0em;
+  grid-template-areas: 
+  'image title'
+  'image body';
+  grid-template-columns: auto 1fr;
+  column-gap: 2em;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.news_title{
+  grid-area: title;
+  margin: 0px;
+  align-self: flex-start;
+}
+
+.news_body{
+  grid-area: body;
+  margin: 0px;
+  align-self: flex-start;
+}
+
+.news_image{
+  grid-area: image;
+}
+
+.news_dividing_bar{
+  max-width: 40%;
+  position: relative;
+  left: 20%;
+  border: 2px solid black;
+}
+
+footer{
+  display: flex;
+  padding: 3em 2em 5em 2em;
+  margin: 3em 0px 2em 0px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+}
+
+#footerPages{
+  display: flex;
+  flex:1;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
 
 
 /****************************
 *    Pagina news do Site    *
 *****************************/
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-    border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 2px solid black;
 }
 
 #navigationPages {
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 #navigationPages li {
-    padding: 0 1em;
+  padding: 0 1em;
 }
 
 #navigationPages li:first-child {
-    border-right: 1px solid;
+  border-right: 1px solid;
 }
 
 #navigationPages li:last-child {
-    border-left: 1px solid;
+  border-left: 1px solid;
 }
 
 #formAut {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #userButtons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #loginButton img {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 #homeButton img {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 body {
-    background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 
 #game_image{
-    width:850px;
-    height: 550px;
-    display: block;
-    margin: 30px auto;
-    border-radius: 15px;
+  width:850px;
+  height: 550px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 15px;
 }
 
 figcaption{
-    text-align: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid gray;
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid gray;
 }
 
 #main_content{
-    padding-top: 20px;
-    padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 .content_paragraph{
-    width:40%;
-    margin: 0 auto;
-    padding: 10px 0;
+  width:40%;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 footer {
-    display: flex;
-    padding: 3em 2em 5em 2em;
-    margin: 3em 0px 2em 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+  display: flex;
+  padding: 3em 2em 5em 2em;
+  margin: 3em 0px 2em 0px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
 }
 
 #footerPages {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    padding: 0px;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
-}
-
-
-/****************************
-*   Pagina reviews do Site  *
-*****************************/
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-    border-bottom: 2px solid black;
-}
-
-#navigationPages {
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-}
-
-#navigationPages li {
-    padding: 0 1em;
-}
-
-#navigationPages li:first-child {
-    border-right: 1px solid;
-}
-
-#navigationPages li:last-child {
-    border-left: 1px solid;
-}
-
-#formAut {
-    display: flex;
-    align-items: center;
-}
-
-#userButtons {
-    display: flex;
-    align-items: center;
-}
-
-#loginButton img {
-    vertical-align: bottom;
-}
-
-#homeButton img {
-    vertical-align: bottom;
-}
-
-body {
-    background-color: #ebebeb;
-}
-
-#game_image{
-    width:850px;
-    height: 550px;
-    display: block;
-    margin: 30px auto;
-    border-radius: 15px;
-}
-
-figcaption{
-    text-align: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid gray;
-}
-
-#main_content{
-    padding-top: 20px;
-    padding-bottom: 50px;
-}
-
-.content_paragraph{
-    width:40%;
-    margin: 0 auto;
-    padding: 10px 0;
-}
-
-footer {
-    display: flex;
-    padding: 3em 2em 5em 2em;
-    margin: 3em 0px 2em 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-}
-
-#footerPages {
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    padding: 0px;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
+  list-style: none;
 }
 
 
@@ -315,73 +242,177 @@ ul {
 *   Pagina login do Site    *
 *****************************/
 header{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-    border-bottom: 2px solid black;
-  }
-  
-  #navigationPages{
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  #navigationPages li {
-    padding: 0 1em;
-  }
-  
-  #navigationPages li:first-child{
-    border-right: 1px solid;
-  }
-  
-  #navigationPages li:last-child{
-    border-left: 1px solid;
-  }
-  
-  #userButtons{
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
-  }
-  
-  #homeButton img{
-    margin-left: 20px;
-    vertical-align: bottom;
-  }
-  
-  body{
-    background-color: #ebebeb;
-  }
-  
-  #userForms{
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  #loginForm fieldset{
-    display: flex;
-    flex-flow: column;
-  }
-  
-  #registerForm fieldset{
-    display: flex;
-    flex-flow: column;
-  }
-  
-  .form_item{
-    margin: 5px 0px;
-  }
-  
-  #btnRegister, #btnLogin{
-    margin-top: 30px;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-  
-  ul{
-    list-style: none;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 2px solid #444444;
+}
+
+#navigationPages{
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#navigationPages li {
+  padding: 0 1em;
+}
+
+#navigationPages li:first-child{
+  border-right: 1px solid;
+}
+
+#navigationPages li:last-child{
+  border-left: 1px solid;
+}
+
+#userButtons{
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+#homeButton img{
+  margin-left: 20px;
+  vertical-align: bottom;
+}
+
+body{
+  background-color: #232323;
+}
+
+#userForms{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+}
+
+#loginForm fieldset{
+  display: flex;
+  flex-flow: column;
+  background-color: #aaaaaa;
+  border-radius: 8px 8px;
+  border-style: none;
+  width: 100%;
+}
+
+#registerForm fieldset{
+  display: flex;
+  flex-flow: column;
+  background-color: #aaaaaa;
+  border-style: none;
+  border-radius: 8px 8px;
+  width: 100%;
+}
+
+#loginForm legend{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7e7e7e;
+  border-style: none;
+  border-radius: 8px 8px;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 55px;
+  color: #000000;
+  font-weight: bold;
+  font-size: medium;
+}
+
+#registerForm legend{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7e7e7e;
+  border-style: none;
+  border-radius: 8px 8px;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 55px;
+  color: #000000;
+  font-weight: bold;
+  font-size: medium;
+}
+
+#checkboxDiv{
+  display: flex;
+  margin-left: 5%;
+  padding: 1%;
+}
+
+.form_item{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 1%;
+  justify-content: center;
+}
+
+input[type='text']{
+  border-style: none;
+  border-radius: 4px 4px;
+}
+
+input[type='text']::placeholder{
+  color: #aaaaaa;
+}
+
+input[type='text']:hover{
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+}
+
+/**Nao esta a funcionar**/
+input[type='text']:focus{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-style: none;
+}
+
+input[type=checkbox]{
+  margin-left: 5%;
+  border: 5px solid #7e7e7e;
+}
+
+#checkboxDiv label{
+  font-size: small;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+input[type='submit']{
+  margin-top: 30px;
+  color: #ebebeb;
+  background-color: #232323;
+  border: 1px solid #000000;
+  border-radius: 4px 4px;
+}
+
+input[type='submit']:hover{
+  margin-top: 30px;
+  color: #ffffff;
+  background-color: #444444;
+  border: 1px solid #232323;
+  border-radius: 4px 4px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+
+
+/**** Para todos ****/
+*{
+  font-family: Helvetica, Arial, sans-serif;
+}

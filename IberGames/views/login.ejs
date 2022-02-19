@@ -1,22 +1,22 @@
 <%- include("./partials/header-main") %>
 <main id="userForms">
     <div id="loginBox">
-        <label>LOGIN TO ACCOUNT</label>
         <form action="#" method="get" id="loginForm" name="loginForm">
             <fieldset>
+                <legend>LOGIN TO ACCOUNT</legend>
                 <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
                 <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
                 <div id="checkboxDiv">
-                    <input type="checkbox" name="rememberLogin" id="rememberLogin" class="form_item" value="remember" /> Remember me
+                    <input type="checkbox" name="rememberLogin" id="rememberLogin" class="form_item" value="remember" /><label for="rememberLogin">Remember me</label>
                 </div>
                 <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Login"/>
             </fieldset>
         </form>
     </div>
     <div id="registerBox">
-        <label>REGISTER ACCOUNT</label>
         <form action="#" method="post" id="registerForm" name="registerForm">
             <fieldset>
+                <legend>REGISTER ACCOUNT</legend>
                 <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
                 <input type="text" name="txtEmail" id="txtEmail" size="30" class="form_item" placeholder="Email"/>
                 <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
