@@ -1,6 +1,7 @@
 "use strict";
 const mysql = require("mysql2");
 const options = require("../config/options.json");
+const connection = require("../public/scripts/sql-connection");
 
 /**
  * Função para retornar a lista de categorias da BD.

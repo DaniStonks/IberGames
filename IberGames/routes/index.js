@@ -38,6 +38,27 @@ router.get('/forum-categories', function(req, res) {
     res.render("forum-categories");
 });
 
+exports.getIndexPage = async (req, res) => {
+  // Query the Database for all the Posts in the DB
+  const postsPromise = await Post.find().sort({ created: -1 }).populate('author').skip(skip)
+    .limit(limit);
+  const countPromise = await Post.count();
+  const [posts, count] = await Promise.all([postsPromise, countPromise]);
+  const pages = Math.ceil(count / limit);
+  if (!posts.length && skip) {
+    res.redirect(`/posts/page/${pages}`);
+  } else {
+    res.render('index', {
+      title: 'Home Page',
+      posts,
+      page,
+      pages,
+      count,
+      pageTitle: 'Lastest Posts',
+    });
+  }
+};
+
 router.get("/login", function(req, res){
   res.render("login");
 });
