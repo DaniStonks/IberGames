@@ -386,24 +386,83 @@ header{
   #userForms{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 3%;
   }
-  
+
+  #loginBox label{
+    display: flex;
+    background-color: #7e7e7e;
+    border-style: none;
+    border-radius: 4%;
+    width: 245px;
+    color: #000000;
+    text-align: center;
+  }
+
+  #registerBox label{
+    display: flex;
+    background-color: #7e7e7e;
+    border-style: none;
+    border-radius: 4%;
+    width: 245px;
+    color: #000000;
+    text-align: center;
+  }
+
   #loginForm fieldset{
     display: flex;
     flex-flow: column;
+    background-color: #aaaaaa;
+    border-radius: 4%;
+    border-style: none;
   }
   
   #registerForm fieldset{
     display: flex;
     flex-flow: column;
+    background-color: #aaaaaa;
+    border-style: none;
+    border-radius: 4%;
   }
-  
+
+  #checkboxDiv{
+    color: #232323;
+  }
+
   .form_item{
     margin: 5px 0px;
   }
   
-  #btnRegister, #btnLogin{
+  .form_item input[type=text]{
+    border-radius: 2%;
+    border-style: none;
+  }
+  
+  .form_item input[type=text]::placeholder{
+    color: #aaaaaa;
+  }
+
+  .form_item input[type=text]:hover{
+    border-radius: 2%;
+    border: 1px solid #7e7e7e;
+  }
+
+  .form_item input[type=text]:focus{
+    border-radius: 2%;
+    border: 1px solid #7e7e7e;
+  }
+
+  .form_item input[type=checkbox]{
+    border: 1px solid #232323;
+    border-radius: 1%;
+  }
+
+  .form_item input[type=submit]{
     margin-top: 30px;
+    color: #ebebeb;
+    background-color: #232323;
+    border: 1px solid #000000;
+    border-radius: 2%;
   }
   
   a{
@@ -412,4 +471,8 @@ header{
   
   ul{
     list-style: none;
+  }
+
+  *{
+    font-family: Helvetica, Arial, sans-serif;
   }
