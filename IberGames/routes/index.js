@@ -10,8 +10,9 @@ router.get("/", function (req, res) {
   res.render("index");
 });
 
-router.get('/forum-categories', function (req, res) {
-  var categorias = [];
+var categorias = [];
+
+router.get('/forum', function (req, res) {
   connection.connect();
   connection.query(
     'SELECT Cat_nome, Cat_desc FROM Categoria',
@@ -20,15 +21,10 @@ router.get('/forum-categories', function (req, res) {
         console.log(err.message);
       }
       else {
-        Object.keys(rows).forEach(row => {
-          console.log(row);
-          categorias.push(row);
+        res.render("forum", {
+          categorias : rows
         });
       }
-  });
-  console.log(categorias);
-  res.render("forum-categories", {
-    categorias
   });
 });
 

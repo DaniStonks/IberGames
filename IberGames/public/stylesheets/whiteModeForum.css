@@ -46,13 +46,13 @@ header{
     background-color: #ebebeb;
   }
   
-  #forumCategories{
+  #categories{
     margin: 0px;
     padding: 0px;
     padding-top: 30px;
   }
   
-  #forumCategories li{
+  #categories li{
     background-color: pink;
   }
   
