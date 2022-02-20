@@ -1,0 +1,19 @@
+<%- include("./partials/header-forum") %>
+<main>
+    <ul id="forumPosts">
+        <% posts.forEach(function(post) { %>
+        <li>
+            <div class="votos">
+                <input type="button"/>
+                <label><%= post.Votos %></label>
+                <input type="button"/>
+            </div>
+            <div class="post">
+                <a href="/forum/<%= post.Categoria.toLowerCase() %>/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>
+                <p><%= post.Conteudo %></p>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</main>
+<%- include("./partials/footer") %>

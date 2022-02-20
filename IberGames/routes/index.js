@@ -10,7 +10,6 @@ router.get("/", function (req, res) {
   res.render("index");
 });
 
-var categorias = [];
 
 router.get('/forum', function (req, res) {
   connection.connect();
@@ -28,38 +27,21 @@ router.get('/forum', function (req, res) {
   });
 });
 
-/*
-function replaceChilds(id, newSon) {
-  let no = document.getElementById(id);
-  while (no.hasChildNodes()) {
-      no.removeChild(no.lastChild);
-  }
-  no.appendChild(newSon);
-};
-
-/**
-* Função que recebe um qualquer objeto e retorna dinamicamente uma linha de tabela HTML com informação relativa ao estado das suas propriedades
-* @param {Object} object - objecto do qual vamos transformar o conteudo dos seus atributos em linhas
-* @param {boolean} headerFormat - controla de o formato é cabeçalho ou linha normal
-function categoryListChild(category) {
-  let li = document.createElement("li");
-  let anchor = document.createElement("a");
-  let paragraph = document.createElement("p");
-
-  anchor.textContent = category.name;
-  paragraph.textContent = category.description;
-
-  li.appendChild(anchor);
-  li.appendChild(paragraph);
-  return li;
-};
-
-Information.prototype.showCategories = function () {
-  let categoriesList = document.getElementById("categories");
-  this.category.forEach(category => categoriesList.appendChild(categoryListChild(category)));
-  //replaceChilds(this.id, table);
-};
-*/
+router.get('/forum/:slug', function (req, res) {
+  connection.connect();
+  connection.query(
+    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        res.render("posts", {
+          posts : rows
+        });
+      }
+  });
+});
 
 router.get("/login", function (req, res) {
   res.render("login");
