@@ -5,6 +5,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 var routes = require("./routes/index");
+var authRoutes = require("./routes/auth");
 
 var app = express();
 
@@ -16,6 +17,7 @@ app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", routes);
+app.use("/", authRoutes);
 
 /*
 app.get("/novo-comentario", function(req, res) {

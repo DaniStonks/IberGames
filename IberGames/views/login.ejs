@@ -1,27 +1,27 @@
 <%- include("./partials/header-main") %>
 <main id="userForms">
     <div id="loginBox">
-        <form action="#" method="get" id="loginForm" name="loginForm">
+        <form action="/login/password" method="post" id="loginForm" name="loginForm">
             <fieldset>
                 <legend>LOGIN TO ACCOUNT</legend>
-                <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
-                <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
+                <input type="text" name="loginUsername" id="loginUsername" class="form_item" size="30" placeholder="Username"/>
+                <input type="text" name="loginPassword" id="loginPassword" class="form_item" size="30" placeholder="Password"/>
                 <div id="checkboxDiv">
                     <input type="checkbox" name="rememberLogin" id="rememberLogin" class="form_item" value="remember" /><label for="rememberLogin">Remember me</label>
                 </div>
-                <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Login"/>
+                <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Sign in"/>
             </fieldset>
         </form>
     </div>
     <div id="registerBox">
-        <form action="#" method="post" id="registerForm" name="registerForm">
+        <form action="/signup" method="post" id="registerForm" name="registerForm">
             <fieldset>
                 <legend>REGISTER ACCOUNT</legend>
-                <input type="text" name="txtUsername" id="txtUsername" class="form_item" size="30" placeholder="Username"/>
-                <input type="text" name="txtEmail" id="txtEmail" size="30" class="form_item" placeholder="Email"/>
-                <input type="text" name="txtPassword" id="txtPassword" class="form_item" size="30" placeholder="Password"/>
-                <input type="text" name="txtConfirmPassword" id="txtConfirmPassword" class="form_item" size="30" placeholder="Confirm Password"/>
-                <input type="submit" id="btnRegister" name="btnRegister" class="form_item" value="Register"/>
+                <input type="text" name="signUpUsername" id="signUpUsername" class="form_item" size="30" placeholder="Username"/>
+                <input type="text" name="signUpEmail" id="signUpEmail" size="30" class="form_item" placeholder="Email"/>
+                <input type="password" name="signUpPassword" id="signUpPassword" class="form_item" size="30" placeholder="Password"/>
+                <input type="password" name="signUpConfirmPassword" id="signUpConfirmPassword" class="form_item" size="30" placeholder="Confirm Password"/>
+                <input type="submit" id="btnRegister" name="btnRegister" class="form_item" value="Sign up"/>
             </fieldset>
         </form>
     </div>

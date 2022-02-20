@@ -70,7 +70,7 @@ router.get('/posts/:slug', function (req, res) {
   connection.end();
 });
 
-router.get("/login", function (req, res) {
+router.get("/login", function (req, res, next) {
   res.render("login");
 });
 

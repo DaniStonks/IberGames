@@ -354,22 +354,25 @@ body{
   justify-content: center;
 }
 
-input[type='text']{
+input[type='text'],
+input[type='password']{
   border-style: none;
   border-radius: 4px 4px;
   border: 2px solid transparent;
 }
 
-input[type='text']::placeholder{
+input[type='text']::placeholder, 
+input[type='password']::placeholder{
   color: #aaaaaa;
 }
 
-input[type='text']:hover{
+input[type='text']:hover,
+input[type='password']:hover{
   border: 2px solid #7e7e7e;
 }
 
-/**Nao esta a funcionar**/
-input[type='text']:focus{
+input[type='text']:focus,
+input[type='password']:focus{
   border: 2px solid transparent;
 }
 
