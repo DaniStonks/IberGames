@@ -2,8 +2,8 @@
   <main>
     <ul id="categories">
       <% categorias.forEach(function(categoria) { %>
-        <li>
-          <a href="/forum/<%= categoria.Cat_nome.toLowerCase() %>">
+        <li class = "category">
+          <a href="/categories/<%= categoria.Cat_nome.toLowerCase() %>">
             <%= categoria.Cat_nome %>
           </a>
           <p>

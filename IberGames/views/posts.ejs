@@ -9,7 +9,7 @@
                 <input type="button"/>
             </div>
             <div class="post">
-                <a href="/forum/<%= post.Categoria.toLowerCase() %>/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>
+                <a href="/posts/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>
                 <p><%= post.Conteudo %></p>
             </div>
         </li>

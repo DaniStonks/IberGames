@@ -1,9 +1,9 @@
 "use strict";
 
 const express = require('express');
-const connection = require('../public/scripts/sql-connection');
 const router = express.Router();
-const requestHandlers = require("./request-handlers");
+const mysql = require("mysql2");
+const options = require("../config/options.json");
 
 /* Obtém a página inicial. */
 router.get("/", function (req, res) {
@@ -12,6 +12,7 @@ router.get("/", function (req, res) {
 
 
 router.get('/forum', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
   connection.connect();
   connection.query(
     'SELECT Cat_nome, Cat_desc FROM Categoria',
@@ -25,9 +26,11 @@ router.get('/forum', function (req, res) {
         });
       }
   });
+  connection.end();
 });
 
-router.get('/forum/:slug', function (req, res) {
+router.get('/categories/:slug', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
   connection.connect();
   connection.query(
     'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
@@ -41,13 +44,29 @@ router.get('/forum/:slug', function (req, res) {
         });
       }
   });
+  connection.end();
+});
+
+router.get('/posts/:slug', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  connection.connect();
+  connection.query(
+    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        res.render("posts", {
+          posts : rows
+        });
+      }
+  });
+  connection.end();
 });
 
 router.get("/login", function (req, res) {
   res.render("login");
 });
-
-// People
-router.get("/category", requestHandlers.getCategories);
 
 module.exports = router;

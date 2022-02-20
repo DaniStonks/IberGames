@@ -1,0 +1,13 @@
+<%- include("./partials/header-forum") %>
+<main>
+    <ul id="comentarios">
+        <% comentarios.forEach(function(comentario) { %>
+        <li>
+            <div class="comentario">
+                <p><%= comentario.conteudo %></p>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+</main>
+<%- include("./partials/footer") %>

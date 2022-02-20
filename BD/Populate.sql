@@ -62,17 +62,17 @@ VALUES
     
 INSERT INTO vota(Voto_voto, Util_id, Post_id)
 VALUES
-	('U', 3, 1),
-    ('U', 1, 2),
-    ('U', 1, 3),
-    ('U', 2, 4),
-    ('U', 3, 5),
-	('U', 1, 1),
-    ('U', 1, 4),
-    ('D', 1, 5),
-    ('D', 2, 1),
-    ('U', 3, 2),
-    ('U', 3, 4);
+	('U', 7, 1),
+    ('U', 5, 2),
+    ('U', 5, 3),
+    ('U', 6, 4),
+    ('U', 7, 5),
+	('U', 5, 1),
+    ('U', 5, 4),
+    ('D', 5, 5),
+    ('D', 6, 1),
+    ('U', 7, 2),
+    ('U', 7, 4);
     
 INSERT INTO comentario(Com_texto, Post_id)
 VALUES
@@ -86,10 +86,10 @@ VALUES
     
 INSERT INTO faz(Com_data, Util_id, Com_id)
 VALUES
-	(CONVERT("2020-12-15 12:23:03", DATETIME), 2, 1),
-    (CONVERT("2020-12-15 16:39:34", DATETIME), 3, 2),
-    (CONVERT("2021-01-20 03:21:49", DATETIME), 1, 3),
-    (CONVERT("2018-02-05 08:59:32", DATETIME), 3, 4),
-    (CONVERT("2018-02-05 11:28:02", DATETIME), 1, 5),
-    (CONVERT("2016-08-23 18:28:02", DATETIME), 3, 6),
-    (CONVERT("2018-10-29 19:38:39", DATETIME), 1, 7);
+	(CONVERT("2020-12-15 12:23:03", DATETIME), 6, 1),
+    (CONVERT("2020-12-15 16:39:34", DATETIME), 7, 2),
+    (CONVERT("2021-01-20 03:21:49", DATETIME), 5, 3),
+    (CONVERT("2018-02-05 08:59:32", DATETIME), 7, 4),
+    (CONVERT("2018-02-05 11:28:02", DATETIME), 5, 5),
+    (CONVERT("2016-08-23 18:28:02", DATETIME), 7, 6),
+    (CONVERT("2018-10-29 19:38:39", DATETIME), 5, 7);
