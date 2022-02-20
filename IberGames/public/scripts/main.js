@@ -41,3 +41,10 @@ function categoryListChild(category) {
     li.appendChild(paragraph);
     return li;
 };
+
+Information.prototype.showCategories = function () {
+    let categoriesList = document.getElementById("categories");
+    console.log(this.category);
+    this.category.forEach(category => categoriesList.appendChild(categoryListChild(category)));
+    //replaceChilds(this.id, table);
+};

@@ -11,9 +11,6 @@ var app = express();
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
-var comentarios = [];
-app.locals.comentarios = comentarios;
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
 app.use(express.static(path.join(__dirname, 'public')));

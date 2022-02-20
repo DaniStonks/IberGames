@@ -1,65 +1,71 @@
 "use strict";
 
 const express = require('express');
+const connection = require('../public/scripts/sql-connection');
 const router = express.Router();
 const requestHandlers = require("./request-handlers");
 
 /* Obtém a página inicial. */
-router.get("/", function(req, res) {
-    res.render("index");
+router.get("/", function (req, res) {
+  res.render("index");
 });
 
-/* Obtém a página inicial do forum.
-
-router.get("/", function(req, res) {
-    res.render("index",{
-      title: "neps"
-    });
+router.get('/forum-categories', function (req, res) {
+  var categorias = [];
+  connection.connect();
+  connection.query(
+    'SELECT Cat_nome, Cat_desc FROM Categoria',
+    function (err, rows, fields) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        Object.keys(rows).forEach(row => {
+          console.log(row);
+          categorias.push(row);
+        });
+      }
+  });
+  console.log(categorias);
+  res.render("forum-categories", {
+    categorias
+  });
 });
 
-router.get('/forum-categories', function(req, res) {
-    var myBooks = [];
-    var mySpeakers = [];
-    mySpeakers = appdata.speakers;
-  
-    appdata.speakers.forEach(function(item) {
-      myBooks = myBooks.concat(item.books);
-    });
-    res.render('speakers', {
-      title: 'Speakers',
-      books: myBooks,
-      speakers: mySpeakers,
-      page: 'speakersList'
-    });
-});
-*/
-
-router.get('/forum-categories', function(req, res) {
-    res.render("forum-categories");
-});
-
-exports.getIndexPage = async (req, res) => {
-  // Query the Database for all the Posts in the DB
-  const postsPromise = await Post.find().sort({ created: -1 }).populate('author').skip(skip)
-    .limit(limit);
-  const countPromise = await Post.count();
-  const [posts, count] = await Promise.all([postsPromise, countPromise]);
-  const pages = Math.ceil(count / limit);
-  if (!posts.length && skip) {
-    res.redirect(`/posts/page/${pages}`);
-  } else {
-    res.render('index', {
-      title: 'Home Page',
-      posts,
-      page,
-      pages,
-      count,
-      pageTitle: 'Lastest Posts',
-    });
+/*
+function replaceChilds(id, newSon) {
+  let no = document.getElementById(id);
+  while (no.hasChildNodes()) {
+      no.removeChild(no.lastChild);
   }
+  no.appendChild(newSon);
 };
 
-router.get("/login", function(req, res){
+/**
+* Função que recebe um qualquer objeto e retorna dinamicamente uma linha de tabela HTML com informação relativa ao estado das suas propriedades
+* @param {Object} object - objecto do qual vamos transformar o conteudo dos seus atributos em linhas
+* @param {boolean} headerFormat - controla de o formato é cabeçalho ou linha normal
+function categoryListChild(category) {
+  let li = document.createElement("li");
+  let anchor = document.createElement("a");
+  let paragraph = document.createElement("p");
+
+  anchor.textContent = category.name;
+  paragraph.textContent = category.description;
+
+  li.appendChild(anchor);
+  li.appendChild(paragraph);
+  return li;
+};
+
+Information.prototype.showCategories = function () {
+  let categoriesList = document.getElementById("categories");
+  this.category.forEach(category => categoriesList.appendChild(categoryListChild(category)));
+  //replaceChilds(this.id, table);
+};
+*/
+
+router.get("/login", function (req, res) {
   res.render("login");
 });
 

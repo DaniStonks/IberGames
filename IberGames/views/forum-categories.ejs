@@ -1,11 +1,16 @@
 <%- include("./partials/header-forum") %>
-<main>
+  <main>
     <ul id="categories">
+      <% categorias.forEach(function(categoria) { %>
+        <li>
+          <a href="yep">
+            <%= categoria.Cat_nome %>
+          </a>
+          <p>
+            <%= categoria.Cat_desc %>
+          </p>
+        </li>
+        <% }) %>
     </ul>
-<nav>
-    <ul class="menu">
-        <li><a id="menuPerson" href="javascript: info.showCategories();">Person</a></li>
-    </ul>
-</nav>
-</main>
-<%- include("./partials/footer") %>
+  </main>
+  <%- include("./partials/footer") %>
