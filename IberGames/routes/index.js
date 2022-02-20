@@ -49,16 +49,21 @@ router.get('/categories/:slug', function (req, res) {
 
 router.get('/posts/:slug', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
+  let slug = req.params.slug.replace(/-/g, ' ');
   connection.connect();
   connection.query(
-    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
+    'SELECT Criador, Conteudo, Jogo, Data '
+    + 'FROM viewComentarios '
+    + 'WHERE Jogo = "' + slug + '" '
+    + 'ORDER BY Data ASC',
     function (err, rows, fields) {
       if (err) {
         console.log(err.message);
       }
       else {
-        res.render("posts", {
-          posts : rows
+        res.render("comments", {
+          comentarios : rows,
+          jogo : slug
         });
       }
   });

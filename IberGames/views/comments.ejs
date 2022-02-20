@@ -1,10 +1,13 @@
 <%- include("./partials/header-forum") %>
 <main>
+    <p><%= jogo %></p>
     <ul id="comentarios">
         <% comentarios.forEach(function(comentario) { %>
         <li>
             <div class="comentario">
-                <p><%= comentario.conteudo %></p>
+                <p><%= comentario.Criador %></p>
+                <p><%= comentario.Conteudo %></p>
+                <p><%= comentario.Data %></p>
             </div>
         </li>
         <% }) %>
