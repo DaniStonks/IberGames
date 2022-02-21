@@ -33,7 +33,7 @@ router.get('/categories/:slug', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   connection.connect();
   connection.query(
-    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
+    'SELECT * FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
     function (err, rows, fields) {
       if (err) {
         console.log(err.message);
@@ -52,10 +52,7 @@ router.get('/posts/:slug', function (req, res) {
   let slug = req.params.slug.replace(/-/g, ' ');
   connection.connect();
   connection.query(
-    'SELECT Criador, Conteudo, Jogo, Data '
-    + 'FROM viewComentarios '
-    + 'WHERE Jogo = "' + slug + '" '
-    + 'ORDER BY Data ASC',
+    'SELECT * FROM viewComentarios WHERE Jogo = "' + slug + '" ORDER BY Data ASC',
     function (err, rows, fields) {
       if (err) {
         console.log(err.message);
@@ -73,10 +70,9 @@ router.get('/posts/:slug', function (req, res) {
 router.get("/search", function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   let searchTerm = req.query.search;
-  console.log(searchTerm);
   connection.connect();
   connection.query(
-    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Nome LIKE "%' + searchTerm + '%"', function (err, rows) {
+    'SELECT * FROM viewPosts WHERE Nome LIKE "%' + searchTerm + '%"', function (err, rows) {
       if (err) {
         console.log(err.message);
       }
