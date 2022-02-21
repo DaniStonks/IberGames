@@ -74,15 +74,19 @@ router.post('/logout', function (req, res, next) {
 });
 
 router.post('/signup', function (req, res, next) {
-    db.run('INSERT INTO Registado (username, hashed_password, salt) VALUES (?, ?, ?)', [
-        req.body.username,
-        hashedPassword,
-        salt
+    let connection = mysql.createConnection(options.mysql);
+    connection.connect();
+    connection.query('INSERT INTO Registado (Regist_name, Regist_email, Regist_pass, Regist_dataRegs, Regist_gestor) VALUES (?, ?, ?, ?, ?)', [
+        req.body.signUpUsername,
+        req.body.signUpEmail,
+        req.body.signUpPassword,
+        new Date(),
+        0
     ], function (err) {
         if (err) { return next(err); }
         var user = {
             id: this.lastID,
-            username: req.body.username
+            username: req.body.signUpUsername
         };
         req.login(user, function (err) {
             if (err) { return next(err); }

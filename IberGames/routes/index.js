@@ -7,7 +7,9 @@ const options = require("../config/options.json");
 
 /* Obtém a página inicial. */
 router.get("/", function (req, res) {
-  res.render("index");
+  res.render("index", {
+    user: req.user
+  });
 });
 
 

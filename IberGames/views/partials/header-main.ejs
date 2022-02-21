@@ -23,8 +23,10 @@
         <div id="userButtons">
             <img src="/images/themeIcon.JPG" id="themeButton">
             <a href="/login" id="loginButton"><img src="/images/userIcon.JPG"></a>
-            <form action="/logout" method="post">
-                <button class="logout" type="submit">Sign out</button>
-            </form>
+            <% if (typeof user != 'undefined'){ %>
+                <form action="/logout" method="post">
+                    <button class="logout" type="submit">Sign out</button>
+                </form>
+            <% } %>
         </div>
     </header>
