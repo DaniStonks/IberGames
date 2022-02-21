@@ -1,11 +1,43 @@
 /****************************
-*  Pagina inicial do Site   *
+*   Para todas as paginas   *
+*****************************/
+*{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+
+li a{
+  text-decoration: none;
+  color: #aaaaaa;
+  font-weight: bold;
+}
+
+li a:hover{
+  text-decoration: none;
+  color: #7e7e7e;
+  font-weight: bold;
+}
+
+body{
+  background-color: #232323;
+}
+
+/****************************
+*    HeaderMain styling     *
 *****************************/
 header{
   display: flex;
   justify-content: space-between;
   padding: 0px 0px 10px 0px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #aaaaaa;
 }
 
 #navigationPages{
@@ -20,11 +52,11 @@ header{
 }
 
 #navigationPages li:first-child{
-  border-right: 1px solid;
+  border-right: 1px solid #aaaaaa;
 }
 
 #navigationPages li:last-child{
-  border-left: 1px solid;
+  border-left: 1px solid #aaaaaa;
 }
 
 #formAut{
@@ -45,9 +77,32 @@ header{
   vertical-align: bottom;
 }
 
-body{
-  background-color: #ebebeb;
+
+
+/****************************
+*      Footer Styling       *
+*****************************/
+footer{
+  display: flex;
+  padding: 3em 2em 5em 2em;
+  margin: 3em 0px 2em 0px;
+  border-bottom: 2px solid #aaaaaa;
+  border-top: 2px solid #aaaaaa;
 }
+
+#footerPages{
+  display: flex;
+  flex:1;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+
+
+/****************************
+*    Pagina News do Site    *
+*****************************/
 
 .item{
   background: lightpink;    
@@ -95,10 +150,24 @@ body{
   align-self: flex-start;
 }
 
+.news_title a{
+  text-decoration: none !important;
+  color: #aaaaaa;
+  font-weight: bold;
+}
+
+.news_title a:hover{
+  text-decoration: none !important;
+  color: #7e7e7e;
+  font-weight: bold;
+}
+
 .news_body{
   grid-area: body;
   margin: 0px;
   align-self: flex-start;
+  color: #7e7e7e;
+  font-size: medium;
 }
 
 .news_image{
@@ -109,85 +178,12 @@ body{
   max-width: 40%;
   position: relative;
   left: 20%;
-  border: 2px solid black;
+  border: 2px solid #aaaaaa;
 }
-
-footer{
-  display: flex;
-  padding: 3em 2em 5em 2em;
-  margin: 3em 0px 2em 0px;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-}
-
-#footerPages{
-  display: flex;
-  flex:1;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  padding: 0px;
-}
-
-a{
-  text-decoration: none;
-}
-
-ul{
-  list-style: none;
-}
-
 
 /****************************
-*    Pagina news do Site    *
+*  Pagina Reviews do Site   *
 *****************************/
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 0px 10px 0px;
-  border-bottom: 2px solid black;
-}
-
-#navigationPages {
-  display: flex;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
-}
-
-#navigationPages li {
-  padding: 0 1em;
-}
-
-#navigationPages li:first-child {
-  border-right: 1px solid;
-}
-
-#navigationPages li:last-child {
-  border-left: 1px solid;
-}
-
-#formAut {
-  display: flex;
-  align-items: center;
-}
-
-#userButtons {
-  display: flex;
-  align-items: center;
-}
-
-#loginButton img {
-  vertical-align: bottom;
-}
-
-#homeButton img {
-  vertical-align: bottom;
-}
-
-body {
-  background-color: #ebebeb;
-}
-
 #game_image{
   width:850px;
   height: 550px;
@@ -213,82 +209,17 @@ figcaption{
   padding: 10px 0;
 }
 
-footer {
-  display: flex;
-  padding: 3em 2em 5em 2em;
-  margin: 3em 0px 2em 0px;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-}
-
-#footerPages {
-  display: flex;
-  flex: 1;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  padding: 0px;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
 
 /****************************
 *   Pagina login do Site    *
 *****************************/
-header{
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 0px 10px 0px;
-  border-bottom: 2px solid #444444;
-}
-
-#navigationPages{
-  display: flex;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
-}
-
-#navigationPages li {
-  padding: 0 1em;
-}
-
-#navigationPages li:first-child{
-  border-right: 1px solid;
-}
-
-#navigationPages li:last-child{
-  border-left: 1px solid;
-}
-
-#userButtons{
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-}
-
-#homeButton img{
-  margin-left: 20px;
-  vertical-align: bottom;
-}
-
-body{
-  background-color: #232323;
-}
-
 #userForms{
   display: flex;
   justify-content: space-evenly;
   margin-top: 3%;
   width: 100%;
   height: 100%;
-  appearance: none;
+  
 }
 
 #loginForm fieldset{
@@ -339,12 +270,6 @@ body{
   font-size: medium;
 }
 
-#checkboxDiv{
-  display: flex;
-  margin-left: 5%;
-  padding: 1%;
-}
-
 .form_item{
   margin-left: 10%;
   margin-right: 10%;
@@ -373,18 +298,8 @@ input[type='password']:hover{
 
 input[type='text']:focus,
 input[type='password']:focus{
-  border: 2px solid transparent;
-}
-
-input[type=checkbox]{
-  margin-left: 5%;
-  border: 5px solid #7e7e7e;
-}
-
-#checkboxDiv label{
-  font-size: small;
-  margin-top: 1%;
-  margin-left: 1%;
+  border: 2px solid #7e7e7e;
+  outline: none;
 }
 
 input[type='submit']{
@@ -401,19 +316,4 @@ input[type='submit']:hover{
   background-color: #444444;
   border: 1px solid #232323;
   border-radius: 4px 4px;
-}
-
-a{
-  text-decoration: none;
-}
-
-ul{
-  list-style: none;
-}
-
-
-
-/**** Para todos ****/
-*{
-  font-family: Helvetica, Arial, sans-serif;
 }
