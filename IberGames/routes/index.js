@@ -22,10 +22,10 @@ router.get('/forum', function (req, res) {
       }
       else {
         res.render("forum", {
-          categorias : rows
+          categorias: rows
         });
       }
-  });
+    });
   connection.end();
 });
 
@@ -40,10 +40,10 @@ router.get('/categories/:slug', function (req, res) {
       }
       else {
         res.render("posts", {
-          posts : rows
+          posts: rows
         });
       }
-  });
+    });
   connection.end();
 });
 
@@ -62,16 +62,31 @@ router.get('/posts/:slug', function (req, res) {
       }
       else {
         res.render("comments", {
-          comentarios : rows,
-          jogo : slug
+          comentarios: rows,
+          jogo: slug
         });
       }
-  });
+    });
   connection.end();
 });
 
-router.get("/login", function (req, res, next) {
-  res.render("login");
+router.get("/search", function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  let searchTerm = req.query.search;
+  console.log(searchTerm);
+  connection.connect();
+  connection.query(
+    'SELECT Nome, Conteudo, Categoria, Votos FROM viewPosts WHERE Nome LIKE "%' + searchTerm + '%"', function (err, rows) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        res.render("posts", {
+          posts: rows
+        });
+      }
+    });
+  connection.end();
 });
 
 module.exports = router;

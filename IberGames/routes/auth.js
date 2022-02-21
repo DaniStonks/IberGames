@@ -14,14 +14,14 @@ const customFields = {
     passwordField: "loginPassword"
 };
 
-passport.use('local', new LocalStrategy(customFields, function verify(loginUsername, loginPassword, done) {
+passport.use('local', new LocalStrategy(customFields, function verify(username, password, done) {
     let connection = mysql.createConnection(options.mysql);
     connection.connect();
-    connection.query('SELECT Regist_pass FROM Registado WHERE Regist_name = ?', [loginUsername], function (err, row) {
+    connection.query('SELECT Regist_pass FROM Registado WHERE Regist_name = ?', [username], function (err, row) {
         if (err) { return done(err); }
         if (!row) { return done(null, false); }
 
-        if (row[0].Regist_pass != loginPassword) {
+        if (row[0].Regist_pass != password) {
             return done(null, false);
         }
         return done(null, row);
