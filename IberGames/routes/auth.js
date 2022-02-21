@@ -17,7 +17,7 @@ const customFields = {
 passport.use('local', new LocalStrategy(customFields, function verify(username, password, done) {
     let connection = mysql.createConnection(options.mysql);
     connection.connect();
-    connection.query('SELECT Regist_pass FROM Registado WHERE Regist_name = ?', [username], function (err, row) {
+    connection.query('SELECT Regist_name, Regist_pass, Regist_gestor FROM Registado WHERE Regist_name = ?', [username], function (err, row) {
         if (err) { return done(err); }
         if (!row) { return done(null, false); }
 
@@ -28,39 +28,25 @@ passport.use('local', new LocalStrategy(customFields, function verify(username, 
     });
 }));
 
+//Tratar disto depois- tem haver com o conteudo exclusivo a admins
 passport.serializeUser(function (user, done) {
     process.nextTick(function () {
-        done(null, { id: user.id, username: user.username });
+        //done(null, { username: user.Regist_name, isAdmin: user.Regist_gestor });
+        done(null, JSON.stringify(user));
     });
 });
 
 passport.deserializeUser(function (user, done) {
     process.nextTick(function () {
-        return done(null, user);
+        return done(null, JSON.parse(user));
     });
 });
-
-/*
-A usar quando se der reset na bd e usar-se hashing
-
-passport.use(new LocalStrategy(function verify(username, password, done) {
-    db.get('SELECT rowid AS id, * FROM users WHERE username = ?', [username], function (err, row) {
-        if (err) { return done(err); }
-        if (!row) { return done(null, false, { message: 'Incorrect username or password.' }); }
-
-        crypto.pbkdf2(password, row.salt, 310000, 32, 'sha256', function (err, hashedPassword) {
-            if (err) { return done(err); }
-            if (!crypto.timingSafeEqual(row.hashed_password, hashedPassword)) {
-                return done(null, false, { message: 'Incorrect username or password.' });
-            }
-            return done(null, row);
-        });
-    });
-}));
-*/
+//
 
 router.get("/login", function (req, res, next) {
-    res.render("login");
+    res.render("login", {
+        user: req.user
+    });
 });
 
 router.post('/login/password', passport.authenticate('local', {
@@ -85,8 +71,8 @@ router.post('/signup', function (req, res, next) {
     ], function (err) {
         if (err) { return next(err); }
         var user = {
-            id: this.lastID,
-            username: req.body.signUpUsername
+            username: req.body.signUpUsername,
+            isAdmin: 0
         };
         req.login(user, function (err) {
             if (err) { return next(err); }
@@ -94,5 +80,12 @@ router.post('/signup', function (req, res, next) {
         });
     });
 });
+
+function isAdmin(req, res, next) {
+    if (req.isAuthenticated() && (req.user.is_admin === 1)) {
+        return next();
+    }
+    return res.redirect(403, "/error");
+}
 
 module.exports = router;

@@ -1,5 +1,6 @@
 <%- include("./partials/header-forum") %>
 <main>
+    <% if (posts.length) { %>
     <ul id="forumPosts">
         <% posts.forEach(function(post) { %>
         <li>
@@ -15,5 +16,9 @@
         </li>
         <% }) %>
     </ul>
+    <h3><a href="/new-post">Crie um post!</a></h3>
+    <% } else { %>  
+        Sem posts! <a href="/new-post">Crie um post!</a>
+    <% } %>
 </main>
 <%- include("./partials/footer") %>

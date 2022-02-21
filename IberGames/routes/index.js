@@ -24,7 +24,8 @@ router.get('/forum', function (req, res) {
       }
       else {
         res.render("forum", {
-          categorias: rows
+          categorias: rows,
+          user: req.user
         });
       }
     });
@@ -42,7 +43,8 @@ router.get('/categories/:slug', function (req, res) {
       }
       else {
         res.render("posts", {
-          posts: rows
+          posts: rows,
+          user: req.user
         });
       }
     });
@@ -62,11 +64,36 @@ router.get('/posts/:slug', function (req, res) {
       else {
         res.render("comments", {
           comentarios: rows,
-          jogo: slug
+          jogo: slug,
+          user: req.user
         });
       }
     });
   connection.end();
+});
+
+router.get("/new-comment", function (req, res) {
+  res.render("new-comment", {
+    user: req.user
+  });
+});
+
+router.get("/new-post", function (req, res) {
+  res.render("new-post", {
+    user: req.user
+  });
+});
+
+router.get("/new-category", function (req, res) {
+  res.render("new-category", {
+    user: req.user
+  });
+});
+
+router.get("/edit-category", function (req, res) {
+  res.render("edit-category", {
+    user: req.user
+  });
 });
 
 router.get("/search", function (req, res) {
@@ -80,7 +107,8 @@ router.get("/search", function (req, res) {
       }
       else {
         res.render("posts", {
-          posts: rows
+          posts: rows,
+          user: req.user
         });
       }
     });

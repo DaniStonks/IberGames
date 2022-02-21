@@ -1,0 +1,17 @@
+<%- include("./partials/header-forum") %>
+    <h2>Escreva um novo comentário</h2>
+
+    <form method="post" action="A MUDAR">
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="escreva um título" required>
+        </div>
+        <div class="form-group">
+            <label for="body">Texto do comentário</label>
+            <textarea class="form-control" id="body" name="body" rows="3" columns="10" required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Postar comentário" class="btnPostar">
+        </div>
+    </form>
+<%- include("./partials/footer") %>

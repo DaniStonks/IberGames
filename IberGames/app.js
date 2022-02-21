@@ -37,25 +37,6 @@ app.use(passport.authenticate('session'));
 app.use("/", routes);
 app.use("/", authRoutes);
 
-/*
-app.get("/novo-comentario", function(req, res) {
-  res.render("novo-comentario");
-});
-
-app.post("/novo-comentario", function(req, res) {
-  if (!req.body.title || !req.body.body) {
-    res.status(400).send("Os comentários no Livro de Visitas devem de possuir um título e um corpo.");
-    return;
-  }
-  comentarios.push({
-    title: req.body.title,
-    body: req.body.body,
-    published: new Date()
-  });
-  res.redirect("/");
-});
-*/
-
 app.use(function(req, res) {
   res.status(404).render("404");
 });

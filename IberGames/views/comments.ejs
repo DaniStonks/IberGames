@@ -1,6 +1,7 @@
 <%- include("./partials/header-forum") %>
 <main>
-    <p><%= jogo %></p>
+    <p id="Game"><%= jogo %></p>
+    <% if (comentarios.length) { %>
     <ul id="comentarios">
         <% comentarios.forEach(function(comentario) { %>
         <li>
@@ -12,5 +13,9 @@
         </li>
         <% }) %>
     </ul>
+    <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+    <% } else { %>   
+        Sem comentários! <a href="/new-comment">Adicione um comentário!</a>
+    <% } %>
 </main>
 <%- include("./partials/footer") %>
