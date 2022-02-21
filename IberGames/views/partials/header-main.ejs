@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>IberGames</title>
 </head>
+
 <body>
     <header>
         <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
@@ -18,11 +20,11 @@
             <li><a href="/reviews">Reviews</a></li>
             <li><a href="/forum">Forum</a></li>
         </ul>
-        <div id="formAut">
-            <form>
-                <input type="text" placeholder="Search...">
-            </form>
+        <div id="userButtons">
             <img src="/images/themeIcon.JPG" id="themeButton">
             <a href="/login" id="loginButton"><img src="/images/userIcon.JPG"></a>
+            <form action="/logout" method="post">
+                <button class="logout" type="submit">Sign out</button>
+            </form>
         </div>
     </header>

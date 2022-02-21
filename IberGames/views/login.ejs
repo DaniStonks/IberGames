@@ -4,11 +4,8 @@
         <form action="/login/password" method="post" id="loginForm" name="loginForm">
             <fieldset>
                 <legend>LOGIN TO ACCOUNT</legend>
-                <input type="text" name="loginUsername" id="loginUsername" class="form_item" size="30" placeholder="Username"/>
-                <input type="password" name="loginPassword" id="loginPassword" class="form_item" size="30" placeholder="Password"/>
-                <div id="checkboxDiv">
-                    <input type="checkbox" name="rememberLogin" id="rememberLogin" class="form_item" value="remember" /><label for="rememberLogin">Remember me</label>
-                </div>
+                <input type="text" name="loginUsername" id="loginUsername" class="form_item" size="30" placeholder="Username" required/>
+                <input type="password" name="loginPassword" id="loginPassword" class="form_item" size="30" placeholder="Password" required/>
                 <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Sign in"/>
             </fieldset>
         </form>
