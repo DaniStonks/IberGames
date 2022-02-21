@@ -30,6 +30,11 @@ body{
   background-color: #232323;
 }
 
+.logo{
+  margin-top: 5px;
+  content: url(/images/LogoTipoDarkTheme.png);
+}
+
 /****************************
 *    HeaderMain styling     *
 *****************************/
@@ -59,14 +64,11 @@ header{
   border-left: 1px solid #aaaaaa;
 }
 
-#formAut{
-  display: flex;
-  align-items: center;
-}
-
 #userButtons{
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  width: 116px;
 }
 
 #loginButton img{
@@ -103,19 +105,17 @@ footer{
 /****************************
 *    Pagina News do Site    *
 *****************************/
-
-.item{
-  background: lightpink;    
-  text-align: center;
-  height: 300px !important;
-}
-
-.carousel{
+.container{
   margin-top: 20px;
 }
 
+.item{
+  text-align: center;
+  height: 550px !important;
+}
+
 .carousel-control{
-  height:300px;
+  height:547px;
 }
 
 .bs-example{
@@ -148,6 +148,7 @@ footer{
   grid-area: title;
   margin: 0px;
   align-self: flex-start;
+  max-width: 65%;
 }
 
 .news_title a{
@@ -159,7 +160,6 @@ footer{
 .news_title a:hover{
   text-decoration: none !important;
   color: #7e7e7e;
-  font-weight: bold;
 }
 
 .news_body{

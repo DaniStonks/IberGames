@@ -14,15 +14,15 @@
 
 <body>
     <header>
-        <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
+        <a href="/"><img src="" alt="LogoTipo" class="logo"></a>
         <ul id="navigationPages">
             <li><a href="/">News</a></li>
             <li><a href="/reviews">Reviews</a></li>
             <li><a href="/forum">Forum</a></li>
         </ul>
         <div id="userButtons">
-            <img src="/images/themeIcon.JPG" id="themeButton">
-            <a href="/login" id="loginButton"><img src="/images/userIcon.JPG"></a>
+            <img src="" alt="themeButton" id="themeButton">
+            <a href="/login" id="loginButton"><img src=""></a>
             <% if (typeof user != 'undefined'){ %>
                 <form action="/logout" method="post">
                     <button class="logout" type="submit">Sign out</button>

@@ -29,6 +29,11 @@ body{
   background-color: #ebebeb;
 }
 
+.logo{
+  margin-top: 5px;
+  content: url(/images/LogoTipoWhiteTheme.png);
+}
+
 /****************************
 *    HeaderMain styling     *
 *****************************/
@@ -58,14 +63,19 @@ header{
   border-left: 1px solid #232323;
 }
 
-#formAut{
-  display: flex;
-  align-items: center;
-}
-
 #userButtons{
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  width: 116px;
+}
+
+#themeButton{
+  content: url(/images/themeButtonWithe.png);
+}
+
+#themeButton:hover{
+  content: url(/images/themeButtonWhiteHover.png);
 }
 
 #loginButton img{
@@ -145,6 +155,7 @@ footer{
   grid-area: title;
   margin: 0px;
   align-self: flex-start;
+  max-width: 65%;
 }
 
 .news_title a{
@@ -156,7 +167,6 @@ footer{
 .news_title a:hover{
   text-decoration: none !important;
   color: #5f5e5e;
-  font-weight: bold;
 }
 
 .news_body{
@@ -165,6 +175,7 @@ footer{
   align-self: flex-start;
   color: #5f5e5e;
   font-size: medium;
+  max-width: 65%;
 }
 
 .news_image{
@@ -172,7 +183,7 @@ footer{
 }
 
 .news_dividing_bar{
-  max-width: 40%;
+  max-width: 45%;
   position: relative;
   left: 20%;
   border: 2px solid #232323;
