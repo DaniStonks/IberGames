@@ -1,7 +1,7 @@
 CREATE OR REPLACE VIEW viewPosts 
 AS 
 SELECT Regist_name as Criador, Post_name as Nome, Post_desc as Conteudo,
-Cat_nome as Categoria, Post_votos as Votos
+Cat_nome as Categoria, CalcVotosPost(p.Post_id) as Votos
 FROM post p 
 JOIN categoria c ON c.Cat_id = p.Cat_id
 JOIN gerir g ON g.Post_id = p.Post_id

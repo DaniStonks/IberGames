@@ -1,0 +1,22 @@
+<%- include("./partials/header-forum") %>
+    <form method="post" action="/forum">
+        <fieldset>
+            <legend>
+                <h2>Crie uma nova categoria</h2>
+            </legend>
+            <div class="form-group">
+                <label for="title">Nome</label>
+                <input type="text" class="form-control" id="categoryName" name="categoryName"
+                    placeholder="Escreva o nome" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Descrição da categoria</label>
+                <textarea class="form-control" id="categoryBody" name="categoryBody"
+                    placeholder="Descreva a categoria" maxlength="100" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar category" class="btnPostar">
+            </div>
+        </fieldset>
+    </form>
+<%- include("./partials/footer") %>

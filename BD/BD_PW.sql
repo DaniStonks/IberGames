@@ -34,7 +34,8 @@ CREATE TABLE Registado
   Regist_email VARCHAR(40),
   Regist_pass VARCHAR(20),
   Regist_dataRegs DATETIME,
-  Regist_gestor BOOLEAN,
+  Regist_gestor BOOLEAN DEFAULT 0,
+  Regist_banido BOOLEAN DEFAULT 0,
   PRIMARY KEY (Regist_id)
 );
 
@@ -56,7 +57,6 @@ CREATE TABLE Post
   Post_name VARCHAR(50),
   Post_desc VARCHAR(100),
   Post_datacria DATETIME,
-  Post_votos INT,
   Cat_id INT,
   PRIMARY KEY (Post_id)
 );
@@ -97,6 +97,16 @@ CREATE TABLE Faz
   PRIMARY KEY (Com_id),
   FOREIGN KEY (Regist_id) REFERENCES Registado(Regist_id),
   FOREIGN KEY (Com_id) REFERENCES Comentario(Com_id)
+);
+
+CREATE TABLE Vota
+(
+  Voto_voto CHAR(1) CHECK (Voto_voto = 'U' OR Voto_voto = 'D'),
+  Regist_id INT,
+  Post_id INT,
+  PRIMARY KEY (Regist_id, Post_id),
+  FOREIGN KEY (Regist_id) REFERENCES Registado(Regist_id),
+  FOREIGN KEY (Post_id) REFERENCES Post(Post_id)
 );
 
 CREATE TABLE Gerir
