@@ -180,5 +180,34 @@ header{
 
 
 /****************************
-*  Pagina coments do Forum  *
+*  Pagina comments do Forum  *
 *****************************/
+
+
+
+
+/*****************************************
+*  Pagina forms(com,posts,cat) do Forum  *
+******************************************/
+input[type='text']{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+}
+
+.form-group{
+  margin-right: 10px;
+}
+
+.form-group label{
+  display: block;
+}
+
+textarea{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+  width: 30%;
+  height: 150px;
+  resize: none;
+}
