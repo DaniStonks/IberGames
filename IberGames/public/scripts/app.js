@@ -23,3 +23,23 @@ function votePost(vote, game, username){
 function changeVoteImage(vote, game){
   return "e";
 }
+
+/*
+function changeStyleSheet(sheet){
+  document.getElementById("styleSheet").setAttribute("href", sheet);
+}
+
+function changeTheme(){
+  let themeButton = document.getElementById("themeButton");
+
+  themeButton.onclick = function () {swapStyleSheet("/stylesheets/darkModeSite.css");};
+}
+*/
+
+$('button').click(function() {
+  let mainSheet = $('#pageStyle').attr('href');
+  if(mainSheet === "/stylesheets/whiteModeSite.css")
+     $('#pageStyle').attr('href','/stylesheets/darkModeSite.css');
+  else
+     $('#pageStyle').attr('href','/stylesheets/whiteModeSite.css');
+  });
