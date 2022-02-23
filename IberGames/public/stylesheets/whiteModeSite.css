@@ -80,10 +80,16 @@ header{
 }
 
 #themeButton{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+}
+
+#themeButton img{
   content: url(/images/themeButtonWithe.png);
 }
 
-#themeButton:hover{
+#themeButton img:hover{
   content: url(/images/themeButtonWhiteHover.png);
 }
 
@@ -104,6 +110,10 @@ header{
 
 #logoutButton img{
   content: url(/images/logoutButtonWhite.png);
+}
+
+#logoutButton img:hover{
+  content: url(/images/logoutButtonWhiteHover.png);
 }
 
 /****************************

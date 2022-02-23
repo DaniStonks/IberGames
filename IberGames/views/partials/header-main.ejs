@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/whiteModeSite.css">
+    <link rel="stylesheet" id="pageStyle" href="/stylesheets/whiteModeSite.css" >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/scripts/app.js"></script>
     <title>IberGames</title>
 </head>
 
@@ -22,7 +23,7 @@
         </ul>
         <div id="userButtons">
             <a href="/" id="homeButton"><img src="" alt="homeButton"></a>
-            <img src="" alt="themeButton" id="themeButton">
+            <button id="themeButton" onclick="changeTheme()"><img></button>
             <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
             <% if (typeof user != 'undefined'){ %>
                 <form action="/logout" method="post">
