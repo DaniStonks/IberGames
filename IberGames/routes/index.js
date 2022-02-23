@@ -33,7 +33,7 @@ router.get('/forum', function (req, res) {
 });
 
 /* Cria uma categoria e mostra a pagina */
-router.post('/forum', function (req, res) {
+router.put('/forum', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   connection.connect();
   connection.query('CALL createCategoria(?, ?)', [
@@ -47,7 +47,7 @@ router.post('/forum', function (req, res) {
 });
 
 /* Atualiza uma categoria e mostra a pagina */
-router.post('/forum/edit', function (req, res) {
+router.post('/forum', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   connection.connect();
   connection.query('UPDATE categoria SET Cat_nome = ?, Cat_desc = ? '
