@@ -186,6 +186,34 @@ router.get("/edit-category/:slug", function (req, res) {
   connection.end();
 });
 
+/* Faz um upvote num determinado post */
+router.post('/upvote', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  connection.connect();
+  connection.query('CALL votarEmPost("U", ?, ?)',[
+    req.user[0].Regist_name,
+    req.body.game
+  ], function (err) {
+    if (err) { return console.log(err); }
+    res.redirect("/forum");
+  });
+  connection.end();
+});
+
+/* Faz um upvote num determinado post */
+router.post('/downvote', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  connection.connect();
+  connection.query('CALL votarEmPost("D", ?, ?)',[
+    req.user[0].Regist_name,
+    req.body.game
+  ], function (err) {
+    if (err) { return console.log(err); }
+    res.redirect("/forum");
+  });
+  connection.end();
+});
+
 /* Devolve uma pagina com todos os posts relacionados com o termo de pesquisa */
 router.get("/search", function (req, res) {
   let connection = mysql.createConnection(options.mysql);
