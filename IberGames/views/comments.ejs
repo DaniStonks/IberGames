@@ -2,18 +2,29 @@
 <main>
     <p id="Game"><%= jogo %></p>
     <% if (comentarios.length) { %>
-    <ul id="comentarios">
         <% comentarios.forEach(function(comentario) { %>
-        <li>
-            <div class="comentario">
-                <p><%= comentario.Criador %></p>
-                <p><%= comentario.Conteudo %></p>
-                <p><%= comentario.Data %></p>
+        <article>
+            <div class="comment">
+                <div class="account-info">
+                    <%= comentario.Criador %>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-header">
+                        <%= comentario.Data %>
+                    </div>
+                    <div class="comment-content">
+                        <%= comentario.Conteudo %>
+                    </div>
+                </div>
             </div>
-        </li>
+            <div class="comment-buttons">
+                <form action="/delete-comment" method="post">
+                    <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
+                </form>
+            </div>
+        </article>
         <% }) %>
-    </ul>
-    <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+        <h3><a href="/new-comment">Adicione um comentário!</a></h3>
     <% } else { %>   
         Sem comentários! <a href="/new-comment">Adicione um comentário!</a>
     <% } %>
