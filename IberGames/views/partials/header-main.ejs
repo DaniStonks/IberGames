@@ -21,11 +21,12 @@
             <li><a href="/forum">Forum</a></li>
         </ul>
         <div id="userButtons">
+            <a href="/" id="homeButton"><img src="" alt="homeButton"></a>
             <img src="" alt="themeButton" id="themeButton">
-            <a href="/login" id="loginButton"><img src=""></a>
+            <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
             <% if (typeof user != 'undefined'){ %>
                 <form action="/logout" method="post">
-                    <button class="logout" type="submit">Sign out</button>
+                    <button class="logout" type="submit" id="logoutButton">Sign out</button>
                 </form>
             <% } %>
         </div>

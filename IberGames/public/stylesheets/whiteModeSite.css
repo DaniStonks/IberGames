@@ -67,7 +67,16 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 116px;
+  width: 125px;
+}
+
+#homeButton img{
+  vertical-align: bottom;
+  content: url(/images/homeButtonWhite.png);
+}
+
+#homeButton img:hover{
+  content: url(/images/homeButtonWhiteHover.png);
 }
 
 #themeButton{
@@ -80,10 +89,19 @@ header{
 
 #loginButton img{
   vertical-align: bottom;
+  content: url(/images/loginButtonWhite.png);
 }
 
-#homeButton img{
-  vertical-align: bottom;
+#loginButton img:hover{
+  content: url(/images/loginButtonWhiteHover.png);
+}
+
+#logoutButton{
+  content: url(/images/logoutButtonWhite.png);
+}
+
+#logoutButton:hover{
+  content: url(/images/logoutButtonWhiteHover.png);
 }
 
 

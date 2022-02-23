@@ -71,12 +71,38 @@ header{
   width: 116px;
 }
 
-#loginButton img{
-  vertical-align: bottom;
-}
-
 #homeButton img{
   vertical-align: bottom;
+  content: url(/images/homeButtonDark.png);
+}
+
+#homeButton img:hover{
+  content: url(/images/homeButtonDarkHover.png);
+}
+
+#themeButton{
+  content: url(/images/themeButtonDark.png);
+}
+
+#themeButton:hover{
+  content: url(/images/themeButtonDarkHover.png);
+}
+
+#loginButton img{
+  vertical-align: bottom;
+  content: url(/images/loginButtonDark.png);
+}
+
+#loginButton img:hover{
+  content: url(/images/loginButtonDarkHover.png);
+}
+
+#logoutButton{
+  content: url(/images/logoutButtonDark.png);
+}
+
+#logoutButton:hover{
+  content: url(/images/logoutButtonDarkHover.png);
 }
 
 
