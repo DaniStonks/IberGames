@@ -5,9 +5,13 @@
         <% posts.forEach(function(post) { %>
         <li id="<%= post.Nome %>">
             <div class="votos">
-                <input type="button" class="upvote"/>
+                <form action="/upvote" method="post">
+                    <button type="submit" id="upvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
+                </form>
                 <label><%= post.Votos %></label>
-                <input type="button" class="downvote"/>
+                <form action="/downvote" method="post">
+                    <button type="submit" id="downvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
+                </form>
             </div>
             <div class="post">
                 <a href="/posts/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>
