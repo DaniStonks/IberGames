@@ -1,32 +1,25 @@
 <%- include("./partials/header-forum") %>
-<main>
-    <p id="Game"><%= jogo %></p>
-    <% if (comentarios.length) { %>
-        <% comentarios.forEach(function(comentario) { %>
-        <article>
-            <div class="comment">
-                <div class="account-info">
-                    <%= comentario.Criador %>
-                </div>
-                <div class="comment-body">
-                    <div class="comment-header">
-                        <%= comentario.Data %>
+    <main>
+        <ul id="users">
+            <% users.forEach(function(user) { %>
+                <li>
+                    <div class="user">
+                        <p><%= user.Regist_name %></p>
+                        <p><%= user.Regist_datacria %></p>
                     </div>
-                    <div class="comment-content">
-                        <%= comentario.Conteudo %>
-                    </div>
-                </div>
-            </div>
-            <div class="comment-buttons">
-                <form action="/delete-comment" method="post">
-                    <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
-                </form>
-            </div>
-        </article>
-        <% }) %>
-        <h3><a href="/new-comment">Adicione um comentário!</a></h3>
-    <% } else { %>   
-        Sem comentários! <a href="/new-comment">Adicione um comentário!</a>
-    <% } %>
-</main>
+                    <% if (user.Regist_banido == 0) { %>
+                        <form action="/ban" method="post">
+                            <input type="hidden" name="username" value="<%= user.Regist_name %>">
+                            <button type="submit">Banir</button>
+                        </form>
+                    <% } else { %>
+                        <form action="/unban" method="post">
+                            <input type="hidden" name="username" value="<%= user.Regist_name %>">
+                            <button type="submit">Desbanir</button>
+                        </form>
+                    <% } %>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
 <%- include("./partials/footer") %>

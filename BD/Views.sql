@@ -18,9 +18,7 @@ JOIN post p ON p.Post_id = c.Post_id;
 
 CREATE OR REPLACE VIEW viewVotosUtilizador
 AS 
-SELECT Regist_name as Criador, Com_texto as Conteudo,
-Post_name as Jogo, Com_data as Data
-FROM comentario c 
-JOIN faz f ON c.Com_id = f.Com_id
-JOIN registado r ON r.Regist_id = f.Regist_id
-JOIN post p ON p.Post_id = c.Post_id;
+SELECT Regist_name as Utilizador, Post_name as Jogo, Voto_voto as Voto
+FROM registado r
+JOIN vota v ON r.Regist_id = v.Regist_id
+JOIN post p ON p.Post_id = v.Post_id;

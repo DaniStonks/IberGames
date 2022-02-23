@@ -18,8 +18,11 @@ VALUES
 INSERT INTO registado(Regist_name, Regist_email, Regist_pass, Regist_dataRegs)
 VALUES
     ("JoseSantos","jose@email.com","jose1990", CONVERT("2017-08-29", DATETIME)),
-    ("batmankid","bateman@email.com","spiderman", CONVERT("2020-12-14", DATETIME)),
-    ("admin","admin@email.com","admin", CONVERT("2015-02-03", DATETIME));
+    ("batmankid","bateman@email.com","spiderman", CONVERT("2020-12-14", DATETIME));
+    
+INSERT INTO registado(Regist_name, Regist_email, Regist_pass, Regist_dataRegs, Regist_gestor)
+VALUES
+    ("admin","admin@email.com","admin", CONVERT("2015-02-03", DATETIME), 1);
 
 INSERT INTO gerir(Regist_id, Post_id)
 VALUES
