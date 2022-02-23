@@ -1,3 +1,4 @@
+/*
 window.onload = function(){
   console.log(posts);
   document.querySelectorAll('.upvote').forEach(button => {
@@ -24,22 +25,21 @@ function changeVoteImage(vote, game){
   return "e";
 }
 
-/*
 function changeStyleSheet(sheet){
   document.getElementById("styleSheet").setAttribute("href", sheet);
 }
-
-function changeTheme(){
-  let themeButton = document.getElementById("themeButton");
-
-  themeButton.onclick = function () {swapStyleSheet("/stylesheets/darkModeSite.css");};
-}
 */
 
-$('button').click(function() {
-  let mainSheet = $('#pageStyle').attr('href');
-  if(mainSheet === "/stylesheets/whiteModeSite.css")
-     $('#pageStyle').attr('href','/stylesheets/darkModeSite.css');
-  else
-     $('#pageStyle').attr('href','/stylesheets/whiteModeSite.css');
-  });
+function changeMainPageTheme(){
+  let currentSheet = document.getElementById("activeTheme");
+  if(currentSheet.classList[0] = 'light'){
+    currentSheet.setAttribute("href", "/stylesheets/darkModeSite.css");
+    currentSheet.classList.remove("light");
+    currentSheet.classList.add("dark");
+  }
+  else{
+    currentSheet.setAttribute("href","/stylesheets/whiteModeSite.css");
+    currentSheet.classList.remove("dark");
+    currentSheet.classList.add("light");
+  }
+}
