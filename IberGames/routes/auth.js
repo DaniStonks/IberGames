@@ -81,11 +81,4 @@ router.post('/signup', function (req, res, next) {
     });
 });
 
-function isAdmin(req, res, next) {
-    if (req.isAuthenticated() && (req.user.is_admin === 1)) {
-        return next();
-    }
-    return res.redirect(403, "/error");
-}
-
 module.exports = router;

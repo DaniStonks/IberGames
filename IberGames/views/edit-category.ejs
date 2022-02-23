@@ -1,0 +1,20 @@
+<%- include("./partials/header-forum") %>
+    <form method="post" action="/forum/edit">
+        <fieldset>
+            <legend>
+                <h2>Edição da categoria</h2>
+            </legend>
+            <div class="form-group">
+                <label for="title">Nome</label>
+                <input type="text" class="form-control" id="categoryName" name="categoryName" data-oldName="<%= catName %>" value="<%= catName %>" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Descrição da categoria</label>
+                <textarea class="form-control" id="categoryBody" name="categoryBody" data-oldBody="<%= catBody %>" maxlength="100" required><%= catBody %></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar category" class="btnPostar">
+            </div>
+        </fieldset>
+    </form>
+<%- include("./partials/footer") %>

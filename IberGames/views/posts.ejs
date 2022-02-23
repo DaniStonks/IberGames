@@ -3,11 +3,11 @@
     <% if (posts.length) { %>
     <ul id="forumPosts">
         <% posts.forEach(function(post) { %>
-        <li>
+        <li id="<%= post.Nome %>">
             <div class="votos">
-                <input type="button"/>
+                <input type="button" class="upvote"/>
                 <label><%= post.Votos %></label>
-                <input type="button"/>
+                <input type="button" class="downvote"/>
             </div>
             <div class="post">
                 <a href="/posts/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>

@@ -1,16 +1,24 @@
 <%- include("./partials/header-forum") %>
   <main>
-    <ul id="categories">
-      <% categorias.forEach(function(categoria) { %>
-        <li class = "category">
-          <a href="/categories/<%= categoria.Cat_nome.toLowerCase() %>">
-            <%= categoria.Cat_nome %>
-          </a>
-          <p>
-            <%= categoria.Cat_desc %>
-          </p>
-        </li>
-        <% }) %>
-    </ul>
+    <% if (categorias.length) { %>
+      <ul id="categories">
+        <% categorias.forEach(function(categoria) { %>
+          <li class="category">
+            <a href="/categories/<%= categoria.Cat_nome.toLowerCase() %>">
+              <%= categoria.Cat_nome %>
+            </a>
+            <p>
+              <%= categoria.Cat_desc %>
+            </p>
+            <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1) { %>
+              <a href="/edit-category/<%= categoria.Cat_nome.toLowerCase() %>"><input type="button" href="/edit-category" value="Editar"/></a>
+            <% } %>
+          </li>
+          <% }) %>
+      </ul>
+      <h3><a href="/new-category">Crie uma categoria!</a></h3>
+      <% } else { %>
+        Sem posts! <a href="/new-category">Crie uma category!</a>
+        <% } %>
   </main>
-  <%- include("./partials/footer") %>
+<%- include("./partials/footer") %>
