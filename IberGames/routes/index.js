@@ -69,7 +69,8 @@ router.get('/categories/:slug', function (req, res) {
   req.session.current_category = req.params.slug;
   connection.connect();
   connection.query(
-    'SELECT * FROM viewPosts WHERE Categoria = "' + req.params.slug + '"',
+    'SELECT * FROM viewPosts WHERE Categoria = ? '
+    + ' ORDER BY Nome DESC',[ req.params.slug ],
     function (err, rows, fields) {
       if (err) {
         console.log(err.message);
@@ -186,6 +187,27 @@ router.get("/edit-category/:slug", function (req, res) {
   connection.end();
 });
 
+/* Obtem a pagina para moderação dos utilizadores do forum */
+router.get("/user-moderation", function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  connection.connect();
+  connection.query(
+    'SELECT * FROM Registado WHERE Regist_name != ?',[
+      req.user[0].Regist_name
+    ],function (err, rows) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        res.render("user-moderation", {
+          users: rows,
+          user: req.user
+        });
+      }
+    });
+  connection.end();
+});
+
 /* Faz um upvote num determinado post */
 router.post('/upvote', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
@@ -195,7 +217,7 @@ router.post('/upvote', function (req, res) {
     req.body.game
   ], function (err) {
     if (err) { return console.log(err); }
-    res.redirect("/forum");
+    res.redirect("/categories/"+ req.session.current_category);
   });
   connection.end();
 });
@@ -209,7 +231,7 @@ router.post('/downvote', function (req, res) {
     req.body.game
   ], function (err) {
     if (err) { return console.log(err); }
-    res.redirect("/forum");
+    res.redirect("/categories/"+ req.session.current_category);
   });
   connection.end();
 });

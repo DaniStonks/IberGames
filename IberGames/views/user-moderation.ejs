@@ -1,28 +1,32 @@
 <%- include("./partials/header-forum") %>
 <main>
-    <% if (users.length) { %>
-    <ul id="forumPosts">
-        <% posts.forEach(function(post) { %>
-        <li id="<%= post.Nome %>">
-            <div class="votos">
-                <form action="/upvote" method="post">
-                    <input type="hidden" name="game" value="<%= post.Nome %>">
-                    <button type="submit" id="upvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
-                </form>
-                <label><%= post.Votos %></label>
-                <form action="/downvote" method="post">
-                    <input type="hidden" name="game" value="<%= post.Nome %>">
-                    <button type="submit" id="downvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
+    <p id="Game"><%= jogo %></p>
+    <% if (comentarios.length) { %>
+        <% comentarios.forEach(function(comentario) { %>
+        <article>
+            <div class="comment">
+                <div class="account-info">
+                    <%= comentario.Criador %>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-header">
+                        <%= comentario.Data %>
+                    </div>
+                    <div class="comment-content">
+                        <%= comentario.Conteudo %>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-buttons">
+                <form action="/delete-comment" method="post">
+                    <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
                 </form>
             </div>
-            <div class="post">
-                <a href="/posts/<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><%= post.Nome %></a>
-                <p><%= post.Conteudo %></p>
-            </div>
-        </li>
+        </article>
         <% }) %>
-    </ul>
-    <h3><a href="/new-post">Crie um post!</a></h3>
-    <% } %>  
+        <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+    <% } else { %>   
+        Sem comentários! <a href="/new-comment">Adicione um comentário!</a>
+    <% } %>
 </main>
 <%- include("./partials/footer") %>

@@ -32,7 +32,7 @@ function changeStyleSheet(sheet){
 
 function changeMainPageTheme(){
   let currentSheet = document.getElementById("activeTheme");
-  if(currentSheet.classList[0] = 'light'){
+  if(currentSheet.classList[0] == 'light'){
     currentSheet.setAttribute("href", "/stylesheets/darkModeSite.css");
     currentSheet.classList.remove("light");
     currentSheet.classList.add("dark");
