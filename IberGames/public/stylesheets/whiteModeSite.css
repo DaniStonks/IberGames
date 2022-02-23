@@ -67,7 +67,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 125px;
+  width: 155px;
 }
 
 #homeButton img{
@@ -97,14 +97,14 @@ header{
 }
 
 #logoutButton{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+}
+
+#logoutButton img{
   content: url(/images/logoutButtonWhite.png);
 }
-
-#logoutButton:hover{
-  content: url(/images/logoutButtonWhiteHover.png);
-}
-
-
 
 /****************************
 *      Footer Styling       *
