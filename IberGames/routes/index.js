@@ -32,7 +32,7 @@ router.get('/forum', function (req, res) {
   connection.end();
 });
 
-/* Adiciona um post a uma determinda categoria e mostra a pagina */
+/* Cria uma categoria e mostra a pagina */
 router.post('/forum', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   connection.connect();
@@ -46,6 +46,22 @@ router.post('/forum', function (req, res) {
   connection.end();
 });
 
+/* Atualiza uma categoria e mostra a pagina */
+router.post('/forum/edit', function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  connection.connect();
+  connection.query('UPDATE categoria SET Cat_nome = ?, Cat_desc = ? '
+  + 'WHERE Cat_nome = ? AND Cat_desc = ?',[
+    req.body.categoryName,
+    req.body.categoryBody,
+    req.session.edit_cat_name,
+    req.session.edit_cat_body
+  ], function (err) {
+    if (err) { return console.log(err); }
+    res.redirect("/forum");
+  });
+  connection.end();
+});
 
 /* Obtem a pagina de posts para uma determinada categoria */
 router.get('/categories/:slug', function (req, res) {
@@ -61,7 +77,7 @@ router.get('/categories/:slug', function (req, res) {
       else {
         res.render("posts", {
           posts: rows,
-          user: req.user
+          user: req.user,
         });
       }
     });
@@ -146,10 +162,28 @@ router.get("/new-category", function (req, res) {
 });
 
 /* Obtem a pagina para editar uma determinada categoria */
-router.get("/edit-category", function (req, res) {
-  res.render("edit-category", {
-    user: req.user
-  });
+router.get("/edit-category/:slug", function (req, res) {
+  let connection = mysql.createConnection(options.mysql);
+  let categoryName = req.params.slug.toUpperCase()
+  connection.connect();
+  connection.query(
+    'SELECT Cat_desc FROM categoria WHERE Cat_nome = "' + categoryName + '"',
+    function (err, rows) {
+      if (err) {
+        console.log(err.message);
+      }
+      else {
+        req.session.edit_cat_name = categoryName;
+        req.session.edit_cat_body = rows[0].Cat_desc;
+
+        res.render("edit-category", {
+          user: req.user,
+          catName: categoryName,
+          catBody: rows[0].Cat_desc
+        });
+      }
+    });
+  connection.end();
 });
 
 /* Devolve uma pagina com todos os posts relacionados com o termo de pesquisa */
