@@ -13,18 +13,22 @@
 <body>
     <header>
         <div id="logo_and_buttons">
-            <img src="https://via.placeholder.com/150x50" alt="LogoTipo" class="logo">
+            <div id="logoDiv">
+                <img src="" alt="LogoTipo" class="logo">
+            </div>
             <div id="formAut">
-                <form action="/search" method="get">
+                <form action="/search" method="get" id="searchForm" name="searchForm">
                     <input type="text" name="search" id="search" placeholder="Search...">
                 </form>
-                <img src="../images/themeIcon.JPG" id="themeButton">
-                <a href="/login" id="loginButton"><img src="../images/userIcon.JPG"></a>
+                <div id="buttonsDiv">
+                    <button id="themeButton" onclick="changeTheme()"><img></button>
+                    <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
                 <% if (typeof user != 'undefined'){ %>
                     <form action="/logout" method="post">
-                        <button class="logout" type="submit">Sign out</button>
+                        <button type="submit" id="logoutButton"><img></button>
                     </form>
                 <% } %>
+                </div>
             </div>
         </div>
         <ul id="navigationPages">
