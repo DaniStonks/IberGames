@@ -1,9 +1,8 @@
 <%- include("./partials/header-forum") %>
-    <form method="post" action="/forum">
+<main>
+    <form method="put" action="/forum" class="forms" name="forms">
         <fieldset>
-            <legend>
-                <h2>Crie uma nova categoria</h2>
-            </legend>
+            <legend>Crie uma nova categoria</legend>
             <div class="form-group">
                 <label for="title">Nome</label>
                 <input type="text" class="form-control" id="categoryName" name="categoryName"
@@ -19,4 +18,5 @@
             </div>
         </fieldset>
     </form>
+</main>
 <%- include("./partials/footer") %>

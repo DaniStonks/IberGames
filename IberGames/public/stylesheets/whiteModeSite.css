@@ -83,6 +83,7 @@ header{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 #themeButton img{
@@ -106,6 +107,7 @@ header{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 #logoutButton img{
@@ -125,6 +127,7 @@ footer{
   margin: 3em 0px 2em 0px;
   border-bottom: 2px solid #232323;
   border-top: 2px solid #232323;
+  font-size: medium;
 }
 
 #footerPages{

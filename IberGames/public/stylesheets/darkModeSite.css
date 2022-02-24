@@ -68,7 +68,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 116px;
+  width: 155px;
 }
 
 #homeButton img{
@@ -81,10 +81,17 @@ header{
 }
 
 #themeButton{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#themeButton img{
   content: url(/images/themeButtonDark.png);
 }
 
-#themeButton:hover{
+#themeButton img:hover{
   content: url(/images/themeButtonDarkHover.png);
 }
 
@@ -98,10 +105,17 @@ header{
 }
 
 #logoutButton{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#logoutButton img{
   content: url(/images/logoutButtonDark.png);
 }
 
-#logoutButton:hover{
+#logoutButton img:hover{
   content: url(/images/logoutButtonDarkHover.png);
 }
 
@@ -194,6 +208,7 @@ footer{
   align-self: flex-start;
   color: #7e7e7e;
   font-size: medium;
+  max-width: 65%;
 }
 
 .news_image{
@@ -201,7 +216,7 @@ footer{
 }
 
 .news_dividing_bar{
-  max-width: 40%;
+  max-width: 45%;
   position: relative;
   left: 20%;
   border: 2px solid #aaaaaa;

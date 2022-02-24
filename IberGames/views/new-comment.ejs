@@ -1,9 +1,8 @@
 <%- include("./partials/header-forum") %>
-    <form method="post" action="/posts/<%= game %>">
+<main>
+    <form method="post" action="/posts/<%= game %>" class="forms" name="forms">
         <fieldset>
-            <legend>
-                <h2>Escreva um novo comentário</h2>
-            </legend>
+            <legend>Escreva um novo comentário</legend>
             <div class="form-group">
                 <label for="body">Texto do comentário</label>
                 <textarea class="form-control" id="commentBody" name="commentBody"
@@ -14,4 +13,5 @@
             </div>
         </fieldset>
     </form>
+</main>
 <%- include("./partials/footer") %>

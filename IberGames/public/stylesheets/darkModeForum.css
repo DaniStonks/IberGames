@@ -1,184 +1,465 @@
 /****************************
-*  Pagina inicial do Forum  *
+*   Para todas as paginas   *
+*****************************/
+*{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+li a{
+  text-decoration: none;
+  color: #aaaaaa;
+  font-weight: bold;
+}
+
+li a:hover{
+  text-decoration: none;
+  color: #7e7e7e;
+  font-weight: bold;
+}
+
+body{
+  background-color: #232323;
+  margin: 0;
+}
+
+.logo{
+  margin-top: 5px;
+  margin-left: 5px;
+  content: url(/images/LogoTipoDarkTheme.png);
+}
+
+
+
+/****************************
+*    HeaderForum styling     *
 *****************************/
 header{
-    border-bottom: 2px solid black;
-  }
-  
-  #logo_and_buttons{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-  }
-  
-  #navigationPages{
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    padding-bottom: 5px;
-  }
-  
-  #navigationPages li {
-    padding: 0 1em;
-  }
-  
-  #navigationPages li:first-child{
-    border-right: 1px solid;
-  }
-  
-  #navigationPages li:last-child{
-    border-left: 1px solid;
-  }
-  
-  #userButtons{
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
-  }
-  
-  #homeButton img{
-    margin-left: 20px;
-    vertical-align: bottom;
-  }
-  
-  body{
-    background-color: #ebebeb;
-  }
-  
-  #forumCategories{
-    margin: 0px;
-    padding: 0px;
-    padding-top: 30px;
-  }
-  
-  #forumCategories li{
-    background-color: pink;
-  }
-  
-  footer{
-    display: flex;
-    padding: 3em 2em 5em 2em;
-    margin: 3em 0px 2em 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-  }
-  
-  #footerPages{
-    display: flex;
-    flex:1;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    padding: 0px;
-  }
-  
-  
-  a{
-    text-decoration: none;
-  }
-  
-  ul{
-    list-style: none;
-  }
+  border-bottom: 2px solid #aaaaaa;
+}
 
+#logo_and_buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
+}
+
+#formAut{
+  margin-right: 5px;
+}
+
+#searchForm{
+  margin-top: 5px;
+}
+
+#search{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #444444;
+}
+
+#search::placeholder{
+  color: #aaaaaa;
+}
+
+#search:hover{
+  border: 2px solid #787878;
+}
+
+#search:focus{
+  border: 2px solid #787878;
+  outline: none;
+}
+
+#buttonsDiv{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#buttonsDiv form{
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  vertical-align: middle;
+}
+
+#homeButton img{
+  content: url(/images/homeButtonDark.png);
+}
+
+#homeButton img:hover{
+  content: url(/images/homeButtonDarkHover.png);
+}
+
+#themeButton{
+  margin-top: -3px;
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#themeButton img{
+  content: url(/images/themeButtonDark.png);
+}
+
+#themeButton img:hover{
+  content: url(/images/themeButtonDarkHover.png);
+}
+
+#loginButton img{
+  content: url(/images/loginButtonDark.png);
+}
+
+#loginButton img:hover{
+  content: url(/images/loginButtonDarkHover.png);
+}
+
+#logoutButton{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#logoutButton img{
+  content: url(/images/logoutButtonDark.png);
+}
+
+#logoutButton img:hover{
+  content: url(/images/logoutButtonDarkHover.png);
+}
+
+#navigationPages{
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 2px 5px;
+  padding: 0px;
+  font-size: small;
+}
+
+#navigationPages li {
+  padding: 0 1em;
+}
+
+#navigationPages li:first-child{
+  border-right: 1px solid #aaaaaa;
+}
+
+#navigationPages li:last-child{
+  border-left: 1px solid #aaaaaa;
+}
+
+
+
+/****************************
+*      Footer Styling       *
+*****************************/
+footer{
+  display: flex;
+  padding: 3em 2em 5em 2em;
+  margin: 3em 0px 2em 0px;
+  border-bottom: 2px solid #aaaaaa;
+  border-top: 2px solid #aaaaaa;
+  font-size: medium;
+}
+
+#footerPages{
+  display: flex;
+  flex:1;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+
+
+/****************************
+*  Pagina inicial do Forum  *
+*****************************/
+#categories{
+  margin: 0px;
+  padding: 0px;
+  padding-top: 30px;
+}
+
+.category{
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 72px;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 6px 6px;
+  background-color: #444444;
+}
+  
+.category p{
+  padding-left: 10px;
+  font-size: medium;
+  color: #aaaaaa;
+}
+
+.category a{
+  color: #aaaaaa;
+  font-size: large;
+}
+
+.category a:hover{
+  color: #7e7e7e;
+}
+
+#newCategory{
+  display: flex;
+  justify-content: center;
+}
+
+h3{
+  display: flex;
+  justify-content: center;
+  background-color: #aaaaaa;
+  border: 2px solid #444444;
+  border-radius: 4px 4px;
+  width: 300px;
+  height: 30px;
+}
+
+h3:hover{
+  background-color: #7e7e7e;
+  border: 2px solid #363636;
+  border-radius: 4px 4px;
+}
+
+h3 a{
+  display: flex;
+  align-self: center;
+  color: #444444;
+  padding: 6px 62px;
+}
 
 
 
 /****************************
 *   Pagina posts do Forum   *
 *****************************/
-header{
-    border-bottom: 2px solid black;
-  }
+#forumPosts{
+  margin: 0px;
+  padding: 0px;
+  padding-top: 30px;
+}
   
-  #logo_and_buttons{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 10px 0px;
-  }
-  
-  #navigationPages{
-    display: flex;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    padding-bottom: 5px;
-  }
-  
-  #navigationPages li {
-    padding: 0 1em;
-  }
-  
-  #navigationPages li:first-child{
-    border-right: 1px solid;
-  }
-  
-  #navigationPages li:last-child{
-    border-left: 1px solid;
-  }
-  
-  #userButtons{
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
-  }
-  
-  #homeButton img{
-    margin-left: 20px;
-    vertical-align: bottom;
-  }
-  
-  body{
-    background-color: #ebebeb;
-  }
-  
-  #forumPosts{
+#forumPosts li{
+  display: flex;
+  margin-bottom: 10px;
+  background-color: #444444;
+  height: 72px;
+}
 
-    margin: 0px;
-    padding: 0px;
-    padding-top: 30px;
-  }
-  
-  #forumPosts li{
-    display: flex;
-    margin-bottom: 3px;
-    background-color: pink;
-  }
+.votos{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 3%;
+  border: 2px solid #888888;
+  border-radius: 4px 4px;
+}
 
-  .votos{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    width: 3%;
-    border: 2px solid black;
-  }
-  
-  footer{
-    display: flex;
-    padding: 3em 2em 5em 2em;
-    margin: 3em 0px 2em 0px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-  }
-  
-  #footerPages{
-    display: flex;
-    flex:1;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    padding: 0px;
-  }
-  
-  
-  a{
-    text-decoration: none;
-  }
-  
-  ul{
-    list-style: none;
-  }
+.votos label{
+  color: #aaaaaa;
+}
+
+.post{
+  border-style: none;
+  border-radius: 4px 4px;
+}
+
+.post a{
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: large;
+  color: #aaaaaa;
+}
+
+.post a:hover{
+  color: #7e7e7e;
+}
+
+.post p{
+  padding-left: 20px;
+  font-size: medium;
+  color: #aaaaaa;
+}
+
+button[type=submit]{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#upvoteForm button img{
+  content: url(/images/upvoteDark.png);
+}
+
+#upvoteForm button img:hover{
+  content: url(/images/upvoteDarkHover.png);
+}
+
+#upvoteForm button img:active{
+  content: url(/images/upvoteActive.png);
+}
+
+#downvoteForm button img{
+  content: url(/images/downvoteDark.png);
+}
+
+#downvoteForm button img:hover{
+  content: url(/images/downvoteDarkHover.png);
+}
+
+#downvoteForm button img:active{
+  content: url(/images/downvoteActive.png);
+}
+
+.newPost{
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+}
+
 
 
 /****************************
-*  Pagina coments do Forum  *
+*  Pagina comments do Forum  *
 *****************************/
+
+
+
+
+/*****************************************
+*  Pagina forms(com,posts,cat) do Forum  *
+******************************************/
+.forms{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.forms legend{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7e7e7e;
+  border-style: none;
+  border-radius: 6px 6px;
+  margin-bottom: 2px;
+  margin-left: -9px;
+  width: 101%;
+  height: 45px;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+}
+
+.forms fieldset{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background-color: #aaaaaa;
+  border-radius: 6px 6px;
+  border-style: none;
+  width: 75%;
+  height: 100%;
+}
+
+.form-group{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.form-group label{
+  font-size: medium;
+  font-weight: bold;
+}
+
+.form-group input{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid transparent;
+  width: 40%;
+  height: 20px;
+}
+
+.form-group input::placeholder{
+  color: #aaaaaa;
+}
+
+.form-group input:hover{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+}
+
+.form-group input:focus{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+  outline: none;
+}
+
+textarea{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid transparent;
+  width: 40%;
+  height: 100px;
+  resize: none;
+}
+
+textarea::placeholder{
+  color: #aaaaaa;
+}
+
+textarea:hover{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+}
+
+textarea:focus{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+  outline: none;
+}
+
+.btnPostar{
+  margin-top: 20px;
+  padding: 2px;
+  color: #ebebeb;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+  width: 40.5% !important;
+  height: 25px !important;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.btnPostar:hover{
+  color: #ffffff;
+  background-color: #444444;
+  border: 2px solid #232323;
+}

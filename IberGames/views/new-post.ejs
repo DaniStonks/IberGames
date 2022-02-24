@@ -1,22 +1,22 @@
 <%- include("./partials/header-forum") %>
-    <form method="post" action="/categories/<%= category %>">
+<main>
+    <form method="post" action="/categories/<%= category %>" class="forms" name="forms">
         <fieldset>
-            <legend>
-                <h2>Escreva um novo post</h2>
-            </legend>
-            <div class="form-group">
-                <label for="title">Título</label>
-                <input type="text" class="form-control" id="postTitle" name="postTitle"
-                    placeholder="Escreva um título" required>
-            </div>
-            <div class="form-group">
-                <label for="body">Descrição do Post</label>
-                <textarea class="form-control" id="postBody" name="postBody"
-                    placeholder="Descreva o seu post" maxlength="100" required></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Criar post" class="btnPostar">
-            </div>
+            <legend>Escreva um novo post</legend>
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input type="text" class="form-control" id="postTitle" name="postTitle"
+                        placeholder="Escreva um título" required>
+                </div>
+                <div class="form-group">
+                    <label for="body">Descrição do Post</label>
+                    <textarea class="form-control" id="postBody" name="postBody"
+                        placeholder="Descreva o seu post" maxlength="100" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Criar post" class="btnPostar">
+                </div> 
         </fieldset>
     </form>
+</main>   
 <%- include("./partials/footer") %>

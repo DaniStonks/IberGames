@@ -5,12 +5,12 @@
         <% posts.forEach(function(post) { %>
         <li id="<%= post.Nome %>">
             <div class="votos">
-                <form action="/upvote" method="post">
+                <form action="/upvote" method="post" id="upvoteForm" name="upvoteForm">
                     <input type="hidden" name="game" value="<%= post.Nome %>">
                     <button type="submit" id="upvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
                 </form>
                 <label><%= post.Votos %></label>
-                <form action="/downvote" method="post">
+                <form action="/downvote" method="post" id="downvoteForm" name="downvoteForm">
                     <input type="hidden" name="game" value="<%= post.Nome %>">
                     <button type="submit" id="downvote-<%= post.Nome.replace(/\s+/g, '-').toLowerCase() %>"><img></button>
                 </form>
@@ -22,9 +22,14 @@
         </li>
         <% }) %>
     </ul>
-    <h3><a href="/new-post">Crie um post!</a></h3>
+    <div class="newPost">
+        <h3><a href="/new-post">Crie um post!</a></h3>
+    </div>
     <% } else { %>  
-        Sem posts! <a href="/new-post">Crie um post!</a>
+    <div class="newPost">
+        <h2>Sem posts!</h2>
+        <h3><a href="/new-post">Crie um post!</a></h3> 
+    </div>
     <% } %>
 </main>
 <%- include("./partials/footer") %>

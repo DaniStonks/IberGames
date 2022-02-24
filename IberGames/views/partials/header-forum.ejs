@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/whiteModeForum.css">
+    <% if (typeof voteSystem != 'undefined') { %>
+    <script src="/scripts/voting.js"></script>
+    <% } %>
+    <script src="/scripts/app.js"></script>
     <title>IberGames - Forum</title>
 </head>
 <body>
     <header>
         <div id="logo_and_buttons">
             <div id="logoDiv">
-                <img src="" alt="LogoTipo" class="logo">
+                <a href="/"><img src="" alt="LogoTipo" class="logo"></a>
             </div>
             <div id="formAut">
                 <form action="/search" method="get" id="searchForm" name="searchForm">
                     <input type="text" name="search" id="search" placeholder="Search...">
                 </form>
                 <div id="buttonsDiv">
-                    <button id="themeButton" onclick="changeTheme()"><img></button>
+                    <a href="/forum" id="homeButton"><img src="" alt="homeButton"></a>
+                    <button id="themeButton" onclick="changeMainPageTheme()"><img></button>
                     <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
                 <% if (typeof user != 'undefined'){ %>
                     <form action="/logout" method="post">

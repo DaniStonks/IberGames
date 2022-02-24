@@ -39,7 +39,7 @@ body{
 
 
 /****************************
-*    HeaderMain styling     *
+*    HeaderForum styling     *
 *****************************/
 header{
   border-bottom: 2px solid #232323;
@@ -92,6 +92,14 @@ header{
   vertical-align: middle;
 }
 
+#homeButton img{
+  content: url(/images/homeButtonWhite.png);
+}
+
+#homeButton img:hover{
+  content: url(/images/homeButtonWhiteHover.png);
+}
+
 #themeButton{
   margin-top: -3px;
   background-repeat: no-repeat;
@@ -119,6 +127,7 @@ header{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 #logoutButton img{
@@ -132,8 +141,9 @@ header{
 #navigationPages{
   display: flex;
   align-items: center;
-  margin: 0px 0px 0px 5px;
+  margin: 0px 0px 2px 5px;
   padding: 0px;
+  font-size: small;
 }
 
 #navigationPages li {
@@ -159,6 +169,7 @@ footer{
   margin: 3em 0px 2em 0px;
   border-bottom: 2px solid #232323;
   border-top: 2px solid #232323;
+  font-size: medium;
 }
 
 #footerPages{
@@ -179,17 +190,63 @@ footer{
   padding: 0px;
   padding-top: 30px;
 }
-  
-#categories li{
-  background-color: pink;
+
+.category{
+  padding-top: 10px;
+  padding-left: 10px;
+  height: 72px;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 6px 6px;
+  background-color: #aaaaaa;
 }
   
+.category p{
+  padding-left: 10px;
+  font-size: medium;
+}
+
+.category a{
+  font-size: large;
+}
+
+.category a:hover{
+  color: #383939;
+}
+
+#newCategory{
+  display: flex;
+  justify-content: center;
+}
+
+h3{
+  display: flex;
+  justify-content: center;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+  width: 300px;
+  height: 30px;
+}
+
+h3:hover{
+  background-color: #444444;
+  border: 2px solid #232323;
+  border-radius: 4px 4px;
+}
+
+h3 a{
+  display: flex;
+  align-self: center;
+  color: #ebebeb;
+  padding: 6px 62px;
+}
+
 
 
 /****************************
 *   Pagina posts do Forum   *
 *****************************/
-  
 #forumPosts{
   margin: 0px;
   padding: 0px;
@@ -198,17 +255,85 @@ footer{
   
 #forumPosts li{
   display: flex;
-  margin-bottom: 3px;
-  background-color: pink;
+  margin-bottom: 10px;
+  background-color: #aaaaaa;
+  height: 72px;
 }
 
 .votos{
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: space-around;
   width: 3%;
-  border: 2px solid black;
+  border: 2px solid #232323;
+  border-radius: 4px 4px;
 }
+
+.votos label{
+  color: #232323;
+}
+
+.post{
+  border-style: none;
+  border-radius: 4px 4px;
+}
+
+.post a{
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: large;
+}
+
+.post a:hover{
+  color: #383939;
+}
+
+.post p{
+  padding-left: 20px;
+  font-size: medium;
+}
+
+button[type=submit]{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: #aaaaaa;
+}
+
+#upvoteForm button img{
+  content: url(/images/upvoteWhite.png);
+}
+
+#upvoteForm button img:hover{
+  content: url(/images/upvoteWhiteHover.png);
+}
+
+#upvoteForm button img:active{
+  content: url(/images/upvoteActive.png);
+}
+
+#downvoteForm button img{
+  content: url(/images/downvoteWhite.png);
+}
+
+#downvoteForm button img:hover{
+  content: url(/images/downvoteWhiteHover.png);
+}
+
+#downvoteForm button img:active{
+  content: url(/images/downvoteActive.png);
+}
+
+.newPost{
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 /****************************
 *  Pagina comments do Forum  *
 *****************************/
@@ -219,25 +344,117 @@ footer{
 /*****************************************
 *  Pagina forms(com,posts,cat) do Forum  *
 ******************************************/
-input[type='text']{
+.forms{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.forms legend{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7e7e7e;
+  border-style: none;
+  border-radius: 6px 6px;
+  margin-bottom: 2px;
+  margin-left: -9px;
+  width: 101%;
+  height: 45px;
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+}
+
+.forms fieldset{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background-color: #aaaaaa;
+  border-radius: 6px 6px;
+  border-style: none;
+  width: 75%;
+  height: 100%;
+}
+
+.form-group{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: column;
+}
+
+.form-group label{
+  font-size: medium;
+  font-weight: bold;
+}
+
+.form-group input{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid transparent;
+  width: 40%;
+  height: 20px;
+}
+
+.form-group input::placeholder{
+  color: #aaaaaa;
+}
+
+.form-group input:hover{
   border-style: none;
   border-radius: 4px 4px;
   border: 2px solid #7e7e7e;
 }
 
-.form-group{
-  margin-right: 10px;
-}
-
-.form-group label{
-  display: block;
+.form-group input:focus{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+  outline: none;
 }
 
 textarea{
   border-style: none;
   border-radius: 4px 4px;
-  border: 2px solid #7e7e7e;
-  width: 30%;
-  height: 150px;
+  border: 2px solid transparent;
+  width: 40%;
+  height: 100px;
   resize: none;
+}
+
+textarea::placeholder{
+  color: #aaaaaa;
+}
+
+textarea:hover{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+}
+
+textarea:focus{
+  border-style: none;
+  border-radius: 4px 4px;
+  border: 2px solid #7e7e7e;
+  outline: none;
+}
+
+.btnPostar{
+  margin-top: 20px;
+  padding: 2px;
+  color: #ebebeb;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+  width: 40.5% !important;
+  height: 25px !important;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.btnPostar:hover{
+  color: #ffffff;
+  background-color: #444444;
+  border: 2px solid #232323;
 }
