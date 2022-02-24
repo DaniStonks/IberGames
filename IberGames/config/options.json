@@ -4,6 +4,7 @@
         "port": 3306,
         "user": "root",
         "password": "password",
-        "database": "Proj_PW"
+        "database": "Proj_PW",
+        "dateStrings": true
     }
 }

@@ -14,6 +14,22 @@ END //
 DELIMITER ;
 
 DELIMITER //
+CREATE PROCEDURE deleteComment(RegistNome VARCHAR(25), comTexto VARCHAR(4000), postNome VARCHAR(50), comData DATETIME)
+BEGIN
+	DECLARE postID, registID, comID INT;
+    SET postID = (SELECT Post_id FROM post WHERE Post_name = postNome);
+    SET registID = (SELECT Regist_id FROM registado WHERE Regist_name = RegistNome);
+    SET comID = (SELECT Com_id FROM comentario WHERE Post_id = postID AND Com_texto = comTexto);
+    
+    DELETE FROM faz
+    WHERE Com_data = comData AND Regist_id = registID AND Com_id = comID;
+    
+    DELETE FROM comentario
+    WHERE Com_texto = comTexto AND Post_id = postID;
+END //
+DELIMITER ;
+
+DELIMITER //
 CREATE PROCEDURE createPost(RegistNome VARCHAR(25), postNome VARCHAR(50), postConteudo VARCHAR(100), catNome VARCHAR(50))
 BEGIN
 	DECLARE catID, registID INT;

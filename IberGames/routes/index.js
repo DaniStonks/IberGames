@@ -32,37 +32,6 @@ router.get('/forum', function (req, res) {
   connection.end();
 });
 
-/* Cria uma categoria e mostra a pagina */
-router.put('/forum', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('CALL createCategoria(?, ?)', [
-    req.body.categoryName,
-    req.body.categoryBody,
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/forum");
-  });
-  connection.end();
-});
-
-/* Atualiza uma categoria e mostra a pagina */
-router.post('/forum', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('UPDATE categoria SET Cat_nome = ?, Cat_desc = ? '
-  + 'WHERE Cat_nome = ? AND Cat_desc = ?',[
-    req.body.categoryName,
-    req.body.categoryBody,
-    req.session.edit_cat_name,
-    req.session.edit_cat_body
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/forum");
-  });
-  connection.end();
-});
-
 /* Obtem a pagina de posts para uma determinada categoria */
 router.get('/categories/:slug', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
@@ -70,7 +39,7 @@ router.get('/categories/:slug', function (req, res) {
   connection.connect();
   connection.query(
     'SELECT * FROM viewPosts WHERE Categoria = ? '
-    + ' ORDER BY Nome DESC',[ req.params.slug ],
+    + ' ORDER BY Nome ASC',[ req.params.slug ],
     function (err, rows, fields) {
       if (err) {
         console.log(err.message);
@@ -82,22 +51,6 @@ router.get('/categories/:slug', function (req, res) {
         });
       }
     });
-  connection.end();
-});
-
-/* Adiciona um post a uma determinda categoria e mostra a pagina */
-router.post('/categories/:slug', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('CALL createPost(?, ?, ?, ?)', [
-    req.user[0].Regist_name,
-    req.body.postTitle,
-    req.body.postBody,
-    req.session.current_category.replace(/-/g, ' ')
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/categories/" + req.params.slug);
-  });
   connection.end();
 });
 
@@ -116,26 +69,11 @@ router.get('/posts/:slug', function (req, res) {
       else {
         res.render("comments", {
           comentarios: rows,
-          jogo: rows[0].Jogo,
+          jogo: slug,
           user: req.user
         });
       }
     });
-  connection.end();
-});
-
-/* Adiciona um comentario ao post sobre um jogo e mostra a pagina */
-router.post('/posts/:slug', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('CALL createComment(?, ?, ?)', [
-    req.user[0].Regist_name,
-    req.body.commentBody,
-    req.session.current_game.replace(/-/g, ' ')
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/posts/" + req.params.slug);
-  });
   connection.end();
 });
 
@@ -205,34 +143,6 @@ router.get("/user-moderation", function (req, res) {
         });
       }
     });
-  connection.end();
-});
-
-/* Faz um upvote num determinado post */
-router.post('/upvote', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('CALL votarEmPost("U", ?, ?)',[
-    req.user[0].Regist_name,
-    req.body.game
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/categories/"+ req.session.current_category);
-  });
-  connection.end();
-});
-
-/* Faz um upvote num determinado post */
-router.post('/downvote', function (req, res) {
-  let connection = mysql.createConnection(options.mysql);
-  connection.connect();
-  connection.query('CALL votarEmPost("D", ?, ?)',[
-    req.user[0].Regist_name,
-    req.body.game
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/categories/"+ req.session.current_category);
-  });
   connection.end();
 });
 

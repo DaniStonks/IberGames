@@ -12,6 +12,7 @@ var options = require("./config/options.json");
 
 var routes = require("./routes/index");
 var authRoutes = require("./routes/auth");
+var functionalitiesRoutes = require("./routes/functionalities");
 
 var app = express();
 var connection = mysql.createPool(options.mysql);
@@ -36,6 +37,7 @@ app.use(passport.authenticate('session'));
 
 app.use("/", routes);
 app.use("/", authRoutes);
+app.use("/", functionalitiesRoutes);
 
 app.use(function(req, res) {
   res.status(404).render("404");

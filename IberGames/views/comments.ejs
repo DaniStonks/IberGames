@@ -19,6 +19,9 @@
             </div>
             <div class="comment-buttons">
                 <form action="/delete-comment" method="post">
+                    <input type="hidden" name="username" value="<%= comentario.Criador %>">
+                    <input type="hidden" name="creationDate" value="<%= comentario.Data %>">
+                    <input type="hidden" name="content" value="<%= comentario.Conteudo %>">
                     <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
                 </form>
             </div>
