@@ -151,6 +151,7 @@ footer{
 .item{ 
   text-align: center;
   height: 550px !important;
+  cursor: pointer;
 }
 
 .carousel-control{
@@ -221,12 +222,10 @@ footer{
   border: 2px solid #232323;
 }
 
-/****************************
-*  Pagina Reviews do Site   *
-*****************************/
+/******************************
+*  Pagina NewsPosts do Site   *
+*******************************/
 #game_image{
-  width:850px;
-  height: 550px;
   display: block;
   margin: 30px auto;
   border-radius: 15px;
@@ -235,7 +234,9 @@ footer{
 figcaption{
   text-align: center;
   padding-bottom: 40px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #232323;
+  font-size: large;
+  font-weight: bold;
 }
 
 #main_content{
@@ -247,6 +248,7 @@ figcaption{
   width:40%;
   margin: 0 auto;
   padding: 10px 0;
+  font-size: medium;
 }
 
 

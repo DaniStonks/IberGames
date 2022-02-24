@@ -1,0 +1,95 @@
+<%- include("./partials/header-main") %>
+  <main>
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+          <div class="item active" onclick="putReviewsContent('MonsterHunterRise')">
+            <img src="/images/MonsterHunterRiseReview.jpg" alt="Monster Hunter Rise" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Monster Hunter Rise</h3>
+              <p>Review</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putReviewsContent('PokemonBrilliantDiamond')">
+            <img src="/images/PokemonReview.jpg" alt="Pokémon Brilliante Diamond & Shining Pearl" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Pokémon Brilliant Diamond & Shining Pearl</h3>
+              <p>Review</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putReviewsContent('AgeOfEmpiresIV')">
+            <img src="/images/AgeOfEmpiresReview.jpg" alt="Age of Empires IV" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Age of Empires IV</h3>
+              <p>Review</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putReviewsContent('ForzaHorizon5')">
+            <img src="/images/ForzaHorizon5Review.jpg" alt="XForza Horizon 5" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Forza Horizon 5</h3>
+              <p>Review</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <section id="main_content">
+      <article class="news">
+        <img src="/images/mini_monsterhunterrise.jpg" alt="icon Monster Hunter Rise" class="news_image">
+        <h2 class="news_title"> 
+          <a onclick="putReviewsContent('MonsterHunterRise')">Monster Hunter Rise - Review</a>
+        </h2>
+        <p class="news_body">Beyond mounting monsters and using the wirebug to wall-run in spectacular fashion...</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_Pokemon.jpg" alt="icon Pokémon Brilliante Diamond & Shining Pearl" class="news_image">
+        <h2 class="news_title">
+          <a onclick="putReviewsContent('PokemonBrilliantDiamond')">Pokémon Brilliant Diamond & Shining Pearl - Review</a> 
+        </h2>
+        <p class="news_body">While Brilliant Diamond and Shining Pearl don't move the needle in terms of what Pokémon games will look and play like moving forward, they mostly hit the mark in being faithful to the originals...</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_ageofempiresIV.jpg" alt="icon Age of Empires IV" class="news_image">
+        <h2 class="news_title">
+          <a onclick="putReviewsContent('AgeOfEmpiresIV')">Age of Empires IV - Review</a>
+        </h2>
+        <p class="news_body">The real-time strategy gender remains relevant, fueled by a few big titles once in a while...</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_forzahorizon5.jpg" alt="icon Forza Horizon 5" class="news_image">
+        <h2 class="news_title">
+          <a onclick="putReviewsContent('ForzaHorizon5')">Forza Horizon 5 - Review</a>
+        </h2>
+        <p class="news_body">t every turn, Forza Horizon 5 impresses in ways few games have...</p>
+      </article>
+    </section>
+  </main>
+<%- include("./partials/footer") %>
