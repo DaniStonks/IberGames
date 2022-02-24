@@ -67,6 +67,7 @@ router.get('/posts/:slug', function (req, res) {
         console.log(err.message);
       }
       else {
+        console.log(rows);
         res.render("comments", {
           comentarios: rows,
           jogo: slug,
