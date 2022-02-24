@@ -78,6 +78,7 @@ router.get('/posts/:slug', function (req, res) {
         res.render("comments", {
           comentarios: rows,
           jogo: slug,
+          categoria: req.session.current_category,
           user: req.user
         });
       }

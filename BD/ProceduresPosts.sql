@@ -1,5 +1,4 @@
 DELIMITER //
-DROP PROCEDURE IF EXISTS votarEmPost;
 CREATE PROCEDURE votarEmPost(voto CHAR(1), registNome VARCHAR(25), postNome VARCHAR(50))
 BEGIN
 	DECLARE postID, registID INT;
@@ -21,7 +20,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-DROP PROCEDURE IF EXISTS removerVoto;
 CREATE PROCEDURE removerVoto(voto CHAR(1), registID INT, postID INT)
 BEGIN
     DELETE FROM vota WHERE Voto_voto = voto AND Regist_id = registID AND Post_id = post_id;
@@ -29,7 +27,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-DROP PROCEDURE IF EXISTS atualizarVoto;
 CREATE PROCEDURE atualizarVoto(voto CHAR(1), registID INT, postID INT)
 BEGIN
     UPDATE vota

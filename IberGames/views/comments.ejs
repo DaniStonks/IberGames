@@ -1,6 +1,6 @@
 <%- include("./partials/header-forum") %>
 <main>
-    <p id="Game"><%= jogo %></p>
+    <a href="/categories/<%= categoria %>" id="Game"><%= jogo.toUpperCase() %></a>
     <% if (comentarios.length) { %>
         <% comentarios.forEach(function(comentario) { %>
         <article id="commentArticle">
@@ -22,12 +22,14 @@
                 </div>
             </div>
             <div class="comment-buttons">
-                <form action="/delete-comment" method="post">
-                    <input type="hidden" name="username" value="<%= comentario.Criador %>">
-                    <input type="hidden" name="creationDate" value="<%= comentario.Data %>">
-                    <input type="hidden" name="content" value="<%= comentario.Conteudo %>">
-                    <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
-                </form>
+                <% if(typeof user != 'undefined' && (comentario.Criador == user[0].Regist_name || user[0].Regist_gestor == 1)){ %>
+                    <form action="/delete-comment" method="post">
+                        <input type="hidden" name="username" value="<%= comentario.Criador %>">
+                        <input type="hidden" name="creationDate" value="<%= comentario.Data %>">
+                        <input type="hidden" name="content" value="<%= comentario.Conteudo %>">
+                        <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
+                    </form>
+                <% } %>
             </div>
         </article>
         <% }) %>

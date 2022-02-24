@@ -25,11 +25,11 @@ BEGIN
     
     IF registID is not NULL THEN
 		DELETE FROM faz
-		WHERE Com_data = comData AND Regist_id = registID AND Com_id = comID;
+		WHERE Regist_id = registID AND Com_id = comID;
     END IF;
     
     DELETE FROM comentario
-    WHERE Com_texto = comTexto AND Post_id = postID;
+    WHERE Com_texto = comTexto AND Post_id = postID AND Com_data = comData;
 END //
 DELIMITER ;
 
