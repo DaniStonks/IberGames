@@ -89,7 +89,6 @@ header{
   height: 30px;
   max-width: 30px;
   max-height: 30px;
-  vertical-align: middle;
 }
 
 #homeButton img{
@@ -105,6 +104,8 @@ header{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 #themeButton img{
