@@ -12,9 +12,9 @@ AS
 SELECT Regist_name as Criador, Com_texto as Conteudo,
 Post_name as Jogo, Com_data as Data
 FROM comentario c 
-JOIN faz f ON c.Com_id = f.Com_id
-JOIN registado r ON r.Regist_id = f.Regist_id
-JOIN post p ON p.Post_id = c.Post_id;
+JOIN post p ON p.Post_id = c.Post_id
+LEFT JOIN faz f ON c.Com_id = f.Com_id
+LEFT JOIN registado r ON r.Regist_id = f.Regist_id;
 
 CREATE OR REPLACE VIEW viewVotosUtilizador
 AS 

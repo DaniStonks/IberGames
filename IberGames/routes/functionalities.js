@@ -58,15 +58,28 @@ router.post('/categories/:slug', function (req, res) {
 router.post('/posts/:slug', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
   connection.connect();
-  connection.query('CALL createComment(?, ?, ?)', [
-    req.user[0].Regist_name,
-    req.body.commentBody,
-    req.session.current_game.replace(/-/g, ' ')
-  ], function (err) {
-    if (err) { return console.log(err); }
-    res.redirect("/posts/" + req.params.slug);
-  });
-  connection.end();
+  if( typeof req.user == 'undefined'){
+    connection.query('CALL createComment(?, ?, ?)', [
+      '',
+      req.body.commentBody,
+      req.session.current_game.replace(/-/g, ' ')
+    ], function (err) {
+      if (err) { return console.log(err); }
+      res.redirect("/posts/" + req.params.slug);
+    });
+    connection.end();
+  }
+  else{
+    connection.query('CALL createComment(?, ?, ?)', [
+      req.user[0].Regist_name,
+      req.body.commentBody,
+      req.session.current_game.replace(/-/g, ' ')
+    ], function (err) {
+      if (err) { return console.log(err); }
+      res.redirect("/posts/" + req.params.slug);
+    });
+    connection.end();
+  }
 });
 
 /* Faz um upvote num determinado post */
