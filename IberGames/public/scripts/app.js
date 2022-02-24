@@ -28,5 +28,19 @@ function changeForumPageTheme(){
 
 
 /**** ****/
-const newsImage = document.getElementsByClassName("game-image");
-const newsTitle = document.getElementsByClassName("news_title");
+function eraseContent(){
+  const main = document.getElementsByTagName("main");
+  
+  while(main[0].hasChildNodes()){
+    main[0].removeChild(main[0].firstChild);
+  }
+}
+
+function putContent(gameName){
+  const newsData = JSON.parse(news-posts);
+  console.log(newsData);
+  eraseContent();
+
+
+
+}

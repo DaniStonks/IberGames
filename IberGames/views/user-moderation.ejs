@@ -7,17 +7,19 @@
                         <p><%= user.Regist_name %></p>
                         <p><%= user.Regist_datacria %></p>
                     </div>
-                    <% if (user.Regist_banido == 0) { %>
-                        <form action="/ban" method="post">
-                            <input type="hidden" name="username" value="<%= user.Regist_name %>">
-                            <button type="submit">Banir</button>
-                        </form>
-                    <% } else { %>
-                        <form action="/unban" method="post">
-                            <input type="hidden" name="username" value="<%= user.Regist_name %>">
-                            <button type="submit">Desbanir</button>
-                        </form>
-                    <% } %>
+                    <div class="bans">
+                        <% if (user.Regist_banido == 0) { %>
+                            <form action="/ban" method="post">
+                                <input type="hidden" name="username" value="<%= user.Regist_name %>">
+                                <button type="submit">Banir</button>
+                            </form>
+                        <% } else { %>
+                            <form action="/unban" method="post">
+                                <input type="hidden" name="username" value="<%= user.Regist_name %>">
+                                <button type="submit">Desbanir</button>
+                            </form>
+                        <% } %>
+                    </div>
                 </li>
             <% }) %>
         </ul>

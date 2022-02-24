@@ -1,9 +1,7 @@
 <%- include("./partials/header-forum") %>
-    <form method="post" action="/forum/edit">
+    <form method="post" action="/forum/edit" class="forms" name="forms">
         <fieldset>
-            <legend>
-                <h2>Edição da categoria</h2>
-            </legend>
+            <legend>Edição da categoria</legend>
             <div class="form-group">
                 <label for="title">Nome</label>
                 <input type="text" class="form-control" id="categoryName" name="categoryName" data-oldName="<%= catName %>" value="<%= catName %>" required>
@@ -13,7 +11,7 @@
                 <textarea class="form-control" id="categoryBody" name="categoryBody" data-oldBody="<%= catBody %>" maxlength="100" required><%= catBody %></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Criar category" class="btnPostar">
+                <input type="submit" value="Editar category" class="btnPostar">
             </div>
         </fieldset>
     </form>

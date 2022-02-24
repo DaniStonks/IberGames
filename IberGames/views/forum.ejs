@@ -10,9 +10,11 @@
             <p>
               <%= categoria.Cat_desc %>
             </p>
-            <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1) { %>
-              <a href="/edit-category/<%= categoria.Cat_nome.toLowerCase() %>"><input type="button" href="/edit-category" value="Editar"/></a>
-            <% } %>
+            <div id="editCategoryButton">
+              <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1) { %>
+                <a href="/edit-category/<%= categoria.Cat_nome.toLowerCase() %>"><input type="button" href="/edit-category" value="Editar"/></a>
+              <% } %>
+            </div>
           </li>
           <% }) %>
       </ul>
