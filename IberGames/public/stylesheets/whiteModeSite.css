@@ -195,6 +195,7 @@ footer{
   text-decoration: none !important;
   color: #232323;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .news_title a:hover{
@@ -213,6 +214,7 @@ footer{
 
 .news_image{
   grid-area: image;
+  cursor: pointer;
 }
 
 .news_dividing_bar{
