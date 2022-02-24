@@ -12,6 +12,13 @@ router.get("/", function (req, res) {
   });
 });
 
+/* Obtém a página de reviews. */
+router.get("/reviews", function (req, res) {
+  res.render("reviews", {
+    user: req.user
+  });
+});
+
 /* Obtem a pagina inicial do forum, que contem as categorias */
 router.get('/forum', function (req, res) {
   let connection = mysql.createConnection(options.mysql);
