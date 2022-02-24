@@ -139,24 +139,13 @@ header{
   content: url(/images/logoutButtonDarkHover.png);
 }
 
-#navigationPages{
+#user-moderation{
   display: flex;
   align-items: center;
   margin: 0px 0px 2px 5px;
   padding: 0px;
   font-size: small;
-}
-
-#navigationPages li {
-  padding: 0 1em;
-}
-
-#navigationPages li:first-child{
-  border-right: 1px solid #aaaaaa;
-}
-
-#navigationPages li:last-child{
-  border-left: 1px solid #aaaaaa;
+  color: #aaaaaa;
 }
 
 
@@ -299,7 +288,7 @@ h3 a{
   color: #aaaaaa;
 }
 
-button[type=submit]{
+#upvoteForm button[type=submit]{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
@@ -316,6 +305,13 @@ button[type=submit]{
 
 #upvoteForm button img:active{
   content: url(/images/upvoteActive.png);
+}
+
+#downvoteForm button[type=submit]{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 #downvoteForm button img{
@@ -342,7 +338,87 @@ button[type=submit]{
 /****************************
 *  Pagina comments do Forum  *
 *****************************/
+#Game{
+  color: #aaaaaa;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
 
+#commentArticle{
+  background-color: #444444;
+  margin-bottom: 10px;
+  border-radius: 6px 6px;
+}
+
+.comment{
+  display: flex;
+  width: 100%;
+}
+
+.account-info{
+  color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 10%;
+  height: 130px;
+  background-color: #606060;
+  border-radius: 6px 6px;
+}
+
+.comment-body{
+  width: 90%;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+.comment-header{
+  color: #aaaaaa;
+  font-size: small;
+}
+
+.comment-content{
+  color: #aaaaaa;
+  padding-left: 5px;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.comment-buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  height: 45px;
+}
+
+.btnDelete{
+  color: #232323;
+  margin-right: 10px;
+  background-color: #aaaaaa;
+  border: 2px solid #232323;
+  border-radius: 4px 4px;
+  width: 65px;
+}
+
+.btnDelete:hover{
+  background-color: #d6d6d6;
+  border: 2px solid #363636;
+}
+
+.newComment{
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.newComment h3{
+  width: 350px;
+}
 
 
 

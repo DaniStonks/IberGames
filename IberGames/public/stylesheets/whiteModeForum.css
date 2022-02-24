@@ -138,26 +138,14 @@ header{
   content: url(/images/logoutButtonWhiteHover.png);
 }
 
-#navigationPages{
+#user-moderation{
   display: flex;
   align-items: center;
   margin: 0px 0px 2px 5px;
   padding: 0px;
   font-size: small;
+  color: #232323;
 }
-
-#navigationPages li {
-  padding: 0 1em;
-}
-
-#navigationPages li:first-child{
-  border-right: 1px solid #232323;
-}
-
-#navigationPages li:last-child{
-  border-left: 1px solid #232323;
-}
-
 
 
 /****************************
@@ -294,11 +282,11 @@ h3 a{
   font-size: medium;
 }
 
-button[type=submit]{
+#upvoteForm button[type=submit]{
   background-repeat: no-repeat;
   border: 0;
   padding: 0;
-  background-color: #aaaaaa;
+  background-color: transparent;
 }
 
 #upvoteForm button img{
@@ -311,6 +299,13 @@ button[type=submit]{
 
 #upvoteForm button img:active{
   content: url(/images/upvoteActive.png);
+}
+
+#downvoteForm button[type=submit]{
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 #downvoteForm button img{
@@ -337,9 +332,86 @@ button[type=submit]{
 /****************************
 *  Pagina comments do Forum  *
 *****************************/
+#Game{
+  color: #232323;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 5px;
+}
 
+#commentArticle{
+  background-color: #aaaaaa;
+  margin-bottom: 10px;
+  border-radius: 6px 6px;
+}
 
+.comment{
+  display: flex;
+  width: 100%;
+}
 
+.account-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 10%;
+  height: 130px;
+  background-color: #d6d6d6;
+  border-radius: 6px 6px;
+}
+
+.comment-body{
+  width: 90%;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-bottom: 2px solid #232323;
+}
+
+.comment-header{
+  color: #232323;
+  font-size: small;
+}
+
+.comment-content{
+  color: #232323;
+  padding-left: 5px;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.comment-buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  height: 45px;
+}
+
+.btnDelete{
+  color: #ebebeb;
+  margin-right: 10px;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+  width: 65px;
+}
+
+.btnDelete:hover{
+  background-color: #444444;
+  border: 2px solid #232323;
+}
+
+.newComment{
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.newComment h3{
+  width: 350px;
+}
 
 /*****************************************
 *  Pagina forms(com,posts,cat) do Forum  *

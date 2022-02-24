@@ -3,7 +3,7 @@
     <p id="Game"><%= jogo %></p>
     <% if (comentarios.length) { %>
         <% comentarios.forEach(function(comentario) { %>
-        <article>
+        <article id="commentArticle">
             <div class="comment">
                 <div class="account-info">
                     <%= comentario.Criador %>
@@ -27,9 +27,14 @@
             </div>
         </article>
         <% }) %>
-        <h3><a href="/new-comment">Adicione um comentário!</a></h3>
-    <% } else { %>   
-        Sem comentários! <a href="/new-comment">Adicione um comentário!</a>
+        <div class="newComment">
+            <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+        </div>
+    <% } else { %> 
+        <div class="newComment">
+            <h2>Sem comentários!</h2>
+            <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+        </div>  
     <% } %>
 </main>
 <%- include("./partials/footer") %>
