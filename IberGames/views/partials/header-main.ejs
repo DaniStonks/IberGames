@@ -24,7 +24,9 @@
         <div id="userButtons">
             <a href="/" id="homeButton"><img src="" alt="homeButton"></a>
             <button id="themeButton" onclick="changeMainPageTheme()"><img></button>
-            <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
+            <% if (typeof user == 'undefined'){ %>
+                <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
+            <% } %>
             <% if (typeof user != 'undefined'){ %>
                 <form action="/logout" method="post">
                     <button type="submit" id="logoutButton"><img></button>

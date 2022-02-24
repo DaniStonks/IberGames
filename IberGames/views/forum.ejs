@@ -16,11 +16,15 @@
           </li>
           <% }) %>
       </ul>
-      <div id="newCategory">
-        <h3><a href="/new-category">Crie uma categoria!</a></h3>
-      </div>
+      <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1) { %>
+        <div id="newCategory">
+          <h3><a href="/new-category">Crie uma categoria!</a></h3>
+        </div>
+      <% } %>
       <% } else { %>
-        Sem posts! <a href="/new-category">Crie uma category!</a>
+        <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1) { %>
+          Sem posts! <a href="/new-category">Crie uma category!</a>
+        <% } %>
         <% } %>
   </main>
 <%- include("./partials/footer") %>

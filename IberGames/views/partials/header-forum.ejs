@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/whiteModeForum.css" id="activeTheme" class="light">
     <script src="/scripts/app.js"></script>
-    <% if (typeof voteSystem != 'undefined') { %>
-    <script src="/scripts/voting.js"></script>
-    <% } %>
     <title>IberGames - Forum</title>
 </head>
 <body>
@@ -24,8 +21,10 @@
                 <div id="buttonsDiv">
                     <a href="/forum" id="homeButton"><img src="" alt="homeButton"></a>
                     <button id="themeButton" onclick="changeForumPageTheme()"><img></button>
-                    <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
-                <% if (typeof user != 'undefined'){ %>
+                    <% if (typeof user == 'undefined'){ %>
+                        <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
+                    <% } %>
+                    <% if (typeof user != 'undefined'){ %>
                     <form action="/logout" method="post">
                         <button type="submit" id="logoutButton"><img></button>
                     </form>
