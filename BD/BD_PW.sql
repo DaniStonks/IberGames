@@ -47,6 +47,7 @@ CREATE TABLE Comentario
 (
   Com_id INT AUTO_INCREMENT,
   Com_texto VARCHAR(4000),
+  Com_data DATETIME,
   Post_id INT,
   PRIMARY KEY (Com_id)
 );
@@ -91,7 +92,6 @@ CREATE TABLE Reage
 
 CREATE TABLE Faz
 (
-  Com_data DATETIME,
   Regist_id INT,
   Com_id INT,
   PRIMARY KEY (Com_id),

@@ -6,7 +6,11 @@
         <article id="commentArticle">
             <div class="comment">
                 <div class="account-info">
-                    <%= comentario.Criador %>
+                    <% if(comentario.Criador == null){ %>
+                        Guest
+                    <% } else { %>
+                        <%= comentario.Criador %>
+                    <% }%>
                 </div>
                 <div class="comment-body">
                     <div class="comment-header">

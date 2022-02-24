@@ -32,25 +32,25 @@ VALUES
     (2, 4),
     (3, 5);
     
-INSERT INTO comentario(Com_texto, Post_id)
+INSERT INTO comentario(Com_texto, Com_data, Post_id)
 VALUES
-	('Jogo está cada vez pior', 1),
-    ('Isso é só a nostalgia a falar, o jogo realmente tem coisas negativas mas há bastante de bom.', 1),
-    ('RPG decente', 4),
-    ("Porque é que isto está na categoria dos mmo's?", 3),
-    ("Ho ho ho ha ha, ho ho ho he ha. Hello there, old chum. I’m gnot an elf. I’m gnot a goblin. I’m a gnome. And you’ve been, GNOMED’", 3),
-    ('Bom jogo', 5),
-    ('Cheio de hackers', 5);
+	('Jogo está cada vez pior', CONVERT("2020-12-15 12:23:03", DATETIME), 1),
+    ('Isso é só a nostalgia a falar, o jogo realmente tem coisas negativas mas há bastante de bom.', CONVERT("2020-12-15 16:39:34", DATETIME), 1),
+    ('RPG decente', CONVERT("2021-01-20 03:21:49", DATETIME), 4),
+    ("Porque é que isto está na categoria dos mmo's?", CONVERT("2018-02-05 08:59:32", DATETIME), 3),
+    ("Ho ho ho ha ha, ho ho ho he ha. Hello there, old chum. I’m gnot an elf. I’m gnot a goblin. I’m a gnome. And you’ve been, GNOMED’", CONVERT("2018-02-05 11:28:02", DATETIME), 3),
+    ('Bom jogo', CONVERT("2016-08-23 18:28:02", DATETIME), 5),
+    ('Cheio de hackers', CONVERT("2018-10-29 19:38:39", DATETIME), 5);
     
-INSERT INTO faz(Com_data, Regist_id, Com_id)
+INSERT INTO faz(Regist_id, Com_id)
 VALUES
-	(CONVERT("2020-12-15 12:23:03", DATETIME), 2, 1),
-    (CONVERT("2020-12-15 16:39:34", DATETIME), 3, 2),
-    (CONVERT("2021-01-20 03:21:49", DATETIME), 1, 3),
-    (CONVERT("2018-02-05 08:59:32", DATETIME), 3, 4),
-    (CONVERT("2018-02-05 11:28:02", DATETIME), 1, 5),
-    (CONVERT("2016-08-23 18:28:02", DATETIME), 3, 6),
-    (CONVERT("2018-10-29 19:38:39", DATETIME), 1, 7);
+	(2, 1),
+    (3, 2),
+    (1, 3),
+    (3, 4),
+    (1, 5),
+    (3, 6),
+    (1, 7);
     
 INSERT INTO vota(Voto_voto, Regist_id, Post_id)
 VALUES

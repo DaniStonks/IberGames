@@ -5,11 +5,13 @@ BEGIN
     SET postID = (SELECT Post_id FROM post WHERE Post_name = postNome);
     SET registID = (SELECT Regist_id FROM registado WHERE Regist_name = RegistNome);
     
-    INSERT INTO comentario(Com_texto, Post_id)
-    VALUES (comTexto, postID);
+    INSERT INTO comentario(Com_texto, Com_data, Post_id)
+    VALUES (comTexto, LOCALTIME(), postID);
     
-    INSERT INTO faz(Com_data, Regist_id, Com_id)
-    VALUES (LOCALTIME(), registID, LAST_INSERT_ID());
+    IF registID is not NULL THEN
+		INSERT INTO faz(Regist_id, Com_id)
+		VALUES (registID, LAST_INSERT_ID());
+    END IF;
 END //
 DELIMITER ;
 
@@ -21,8 +23,10 @@ BEGIN
     SET registID = (SELECT Regist_id FROM registado WHERE Regist_name = RegistNome);
     SET comID = (SELECT Com_id FROM comentario WHERE Post_id = postID AND Com_texto = comTexto);
     
-    DELETE FROM faz
-    WHERE Com_data = comData AND Regist_id = registID AND Com_id = comID;
+    IF registID is not NULL THEN
+		DELETE FROM faz
+		WHERE Com_data = comData AND Regist_id = registID AND Com_id = comID;
+    END IF;
     
     DELETE FROM comentario
     WHERE Com_texto = comTexto AND Post_id = postID;
