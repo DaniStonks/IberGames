@@ -303,10 +303,6 @@ h3 a{
   content: url(/images/upvoteDarkHover.png);
 }
 
-#upvoteForm button img:active{
-  content: url(/images/upvoteActive.png);
-}
-
 #downvoteForm button[type=submit]{
   background-repeat: no-repeat;
   border: 0;
@@ -320,10 +316,6 @@ h3 a{
 
 #downvoteForm button img:hover{
   content: url(/images/downvoteDarkHover.png);
-}
-
-#downvoteForm button img:active{
-  content: url(/images/downvoteActive.png);
 }
 
 .newPost{
