@@ -37,8 +37,8 @@ function eraseContent(){
 }
 
 function putContent(gameName){
-  const newsData = JSON.parse(news-posts);
-  console.log(newsData);
+  //const newsData = JSON.stringify(newsPosts);
+  console.log(newsPosts);
   eraseContent();
 
 

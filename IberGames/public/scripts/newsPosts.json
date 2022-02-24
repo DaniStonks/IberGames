@@ -1,32 +1,24 @@
 {
-   "Destiny2": [
-       {
+   "Destiny2":{
            "titulo": "Destiny 2: The Witch Queen - Launch Trailer Welcomes Guardians To Savathûn's Throne World", 
            "imagem": "/public/images/DestinyWitchQueenNew.jpg", 
            "conteudo": "<p class='content_paragraph'>Guardians will soon face off against Savathûn and her Lucent Brood in just one week and to prepare you for the upcoming fight, Bungie has released a new launch trailer for Destiny 2: The Witch Queen.</p> <p class='content_paragraph'>As you might expect, it features plenty of new haunting imagery of the Witch Queen, plus some new threats from her. Like previous expansion launch trailers, this one is quite cinematic, featuring mostly CGI. If you've been paying attention to this expansion, you know Savathûn has been stealing the precious Light of the Guardians. Plus, she has a host of ally enemies that also fight using the light, representing an all-new fight for our own Guardians, who, up until this point, have never fought someone using their own powers.</p> <p class='content_paragraph'>Of course, Savathûn is thrilled that your Guardian and others are coming to her Throne World. In fact, she's inviting you in. The trailer also showcases some new looks at the exotics and fancy Glaive weapons coming to Destiny 2 in The Witch Queen expansion.</p> <p class='content_paragraph'>The trailer ends with a screen that showcases what you can get for preordering Destiny 2: The Witch Queen, which is the most preordered Destiny 2 expansion in the game's history. If you preorder the deluxe edition, you'll receive some instant in-game rewards as well as the Osteo Striga Exotic SMG (and other bonuses) when the expansion is live next week on February 22.</p>"
-        }
-    ],
-    "CyberPunk2077": [
-        {
+        },
+    "CyberPunk2077":{
             "titulo": "CyberPunk 2077 - Is Now The Right Time To Play it?",
             "imagem": "/public/images/cyberpunkNew.jpg",
             "conteudo": "<p class='content_paragraph'>Cyberpunk 2077 received a massive 60+ GB update called Patch 1.5 earlier this week, and it's been aptly referred to as the new-gen update for CD Projekt Red's latest RPG. Perhaps you waited until you had a PlayStation 5 or Xbox Series X to play it, knowing full well how terribly the game runs on prior-gen consoles. Maybe you were hoping to get your hands on a graphics card from Nvidia's impossibly rare 30XX series. No matter what situation you found yourself in during November of 2020, if you've waited until a patch like 1.5 to jump into Night City for the first time, we have you covered. And if you began your journey through Cyberpunk 2077 but decided you'd rather wait until the game was in better shape, we have you covered too. Is now the right time to play Cyberpunk 2077?</p> <p class='content_paragraph'>The too-long, didn't read answer is simple: yes. Now is, indeed, the time to play Cyberpunk 2077 if you were looking for a game more aligned with the original promise of CD Projekt Red's vision. However, while this patch does fix a lot of problems reviewers and players alike had with the game, the core of Cyberpunk 2077 is largely still intact in Patch 1.5. If you didn't like Keanu Reeve's Johnny Silverhand, weren't enthralled by the larger narrative, or didn't enjoy the actual gameplay of Cyberpunk 2077, then this patch is likely not going to sway your opinion. If you were looking for some tweaked systems, such as a better police network, more reactive drivers, and more realistic NPCs waltzing the streets of Night City, then you're in luck: Patch 1.5 features most of the fixes you were probably looking for and then some.</p>"
-        }
-    ],
-    "BaldursGate3": [
-        {
+        },
+    "BaldursGate3":{
             "titulo": "Baldur's Gate 3 - Will Likely Be Released In 2023",
             "imagem": "/public/images/Baldur'sGate3New.jpg",
             "conteudo": "<p class='content_paragraph'>Larian Studio's Baldur's Gate 3 will likely be released in 2023 after years of development, including time spent in Early Access.</p> <p class='content_paragraph'>This news comes by way of PCGamesN, which recently spoke to Larian head Swen Vincke about the status of the RPG. According to Vincke, the team needs another year of development, but this year will be the last full year required for work on the game.</p> <p class='content_paragraph'>“We're going to release it when it's ready,” Vincke said. “I mean, the main goal here is quality: getting the game at the quality level that it needs to be. That said, we do think we still need a year to do that. But it will be the last year. We're getting to the end of it.”</p>"
-        }
-    ],
-    "XenobladeChronicles3": [
-        {
+        },
+    "XenobladeChronicles3":{
             "titulo": "Xenoblade Chronicles 3 - Announced, Releasing This September",
             "imagem": "/public/images/XenobladeChronicles3New.jpg",
             "conteudo": "<p class='content_paragraph'>Nintendo has revealed Xenoblade Chronicles 3, the long-awaited sequel to 2017's Xenoblade Chronicles 2, and it is scheduled to hit Switch this September.</p> <p class='content_paragraph'>Closing out today's Nintendo Direct, Xenoblade Chronicles 3 came as quite a surprise. That's because it showed a lot of imagery that looked similar to Xenoblade Chronicles X, the spin-off to the first Xenoblade Chronicles. Considering that's one of the last big Wii U games that hasn't yet been ported to the Switch, it seemed possible that today's direct was finally revealing that port. However, that's not the case because Nintendo and Monolith Soft are ready to move forward in the story with a threequel.</p> <p class='content_paragraph'>The trailer begins with plenty of flute, -who doesn't love a good flute solo? before jumping straight into the action. Of course, Noah, the game's protagonist, is seen fighting around the battlefield with a Xenoblade in hand.</p> <p class='content_paragraph'>From there, our protagonist and his party begin a massive adventure that seems to take them all around Mira (unless 3 takes place elsewhere). Like Xenoblade Chronicles 2 and the Xenoblade games before it, Chronicles 3 seems to feature a vast and open world.</p> <p class='content_paragraph'>Here's what Nintendo had to say in a press release released shortly after the Direct: “A vast world awaits in Xenoblade Chronicles 3, the next game in the acclaimed RPG series from Monolith Soft. Players will step into the roles of protagonists Noah and Mio amid turmoil between the hostile nations of Keves and Agnus. Six characters hailing from those nations will take part in a grand tale with 'life' as its central theme. Explore a new world that will connect the futures of both Xenoblade Chronicles and Xenoblade Chronicles 2, launching for Nintendo Switch in September 2022.”</p>" 
         }
-    ]
 }
 
     
