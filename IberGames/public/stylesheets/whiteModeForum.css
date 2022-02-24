@@ -139,13 +139,26 @@ header{
   content: url(/images/logoutButtonWhiteHover.png);
 }
 
+
+
 #user-moderation{
   display: flex;
   align-items: center;
   margin: 0px 0px 2px 5px;
-  padding: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
   font-size: small;
+  font-weight: bold;
   color: #232323;
+  border-left: 2px solid #232323;
+  border-right: 2px solid #232323;
+  width: 122px;
+}
+
+#user-moderation:hover{
+  color: #383939;
+  border-left: 2px solid #232323;
+  border-right: 2px solid #232323;
 }
 
 
@@ -193,6 +206,8 @@ footer{
 .category p{
   padding-left: 10px;
   font-size: medium;
+  margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .category a{
@@ -201,6 +216,26 @@ footer{
 
 .category a:hover{
   color: #383939;
+}
+
+#editCategoryButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.category input{
+  color: #ebebeb;
+  margin-right: 10px;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+  width: 65px;
+}
+
+.category input:hover{
+  background-color: #444444;
+  border: 2px solid #232323;
 }
 
 #newCategory{
@@ -406,9 +441,9 @@ h3 a{
   width: 350px;
 }
 
-/*****************************************
-*  Pagina forms(com,posts,cat) do Forum  *
-******************************************/
+/**************************************************
+*  Pagina forms(com,posts,cat, editCat) do Forum  *
+***************************************************/
 .forms{
   display: flex;
   justify-content: center;
@@ -522,4 +557,62 @@ textarea:focus{
   color: #ffffff;
   background-color: #444444;
   border: 2px solid #232323;
+}
+
+/*****************************************
+*    Pagina de Gestão de utilizadores    *
+******************************************/
+#users{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  width: 100%;
+}
+
+#users li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-style: none;
+  border-radius: 6px 6px;
+  background-color: #aaaaaa;
+  margin-bottom: 10px;
+  width: 25%;
+  height: 80px;
+}
+
+.user{
+  color: #232323;
+  border-radius: 6px 6px;
+  border: 1px solid #232323;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user p{
+  font-size: small;
+  font-weight: bold;
+}
+
+.bans{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bans button{
+  color: #ebebeb;
+  margin-right: 10px;
+  background-color: #232323;
+  border: 2px solid #000000;
+  border-radius: 4px 4px;
+}
+
+.bans button:hover{
+  color: #ebebeb;
+  background-color: #444444;
+  border: 2px solid #232323;
+  border-radius: 4px 4px;
 }
